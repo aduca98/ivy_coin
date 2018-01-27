@@ -17,9 +17,7 @@ import {H1, Button, Icon} from "native-base";
 import {BaseContainer, Circle, Styles, Images, WindowDimensions, Field} from "../../components";
 import { TextInputMask } from 'react-native-masked-text'
 import variables from "../../assets/native-base-theme/variables/commonColor";
-import {CryptoSelector} from '../../components/crypto-selector';
 
-import TransactionService from '../../api/TransactionService';
 const SWIPER_HEIGHT = 180;
 import CreditCard, {CardImages} from 'react-native-credit-card';
 import Swiper from 'react-native-swiper';

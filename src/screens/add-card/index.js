@@ -22,7 +22,6 @@ import Loading from '../../components/Loading';
 // Api / services
 import Stripe from '../../utils/Stripe';
 import {updateCards, addCard} from '../../modules/cards';
-import PaymentService from '../../api/PaymentService';
 
 class AddCard extends Component {
 
