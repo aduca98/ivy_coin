@@ -125,27 +125,22 @@ export default {
                 {
                     name: "Caesar Salad",
                     description: "",
-                    photo: require('./images/')
+                    photo: require('./images/caesar-salad.jpg')
                 },
                 {
-                    name: "Burger",
+                    name: "Cheese Burger",
                     description: "",
-                    photo: require('./images/')
+                    photo: require('./images/cheeseburger.jpg')
                 },
                 {
                     name: "Beef Tacos (x3)",
                     description: "",
-                    photo: require('./images/')
+                    photo: require('./images/beef-tacos.jpg')
                 },
                 {
                     name: "Chicken Tacos (x3)",
                     description: "",
-                    photo: require('./images/')
-                },
-                {
-                    name: "Omelet Bowl",
-                    description: "",
-                    photo: require('./images/')
+                    photo: require('./images/chicken-tacos.jpg')
                 }
             ]
         },
