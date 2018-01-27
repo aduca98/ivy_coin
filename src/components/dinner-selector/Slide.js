@@ -10,73 +10,26 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {H1, Button, Left, Header} from "native-base";
-import CryptoPrice from '../../api/CryptoPrice';
 
 export default class Slide extends Component {
-    state = {
-        holdingsValue: "",
-        valueOfCurrency: "10",
-        amountOfCurrency: "2000",
-    }
-
-    // constructor() {
-    //     super();
-    //     this._fetchPrice = this._fetchPrice.bind(this);
-    // }
 
     async componentWillMount() {
-        // Set state for fetching prices...
-        // this.setState({
-        //     amountOfCurrency: b.amount,
-        // });
-        // this._watchPrice(this.props.balance.currency);
+       
     }
-    // async _watchPrice(c) {
-    //     setInterval(await this._fetchPrice(c), 30*1000);
-    // }
-    // async _fetchPrice(currency) {
-    //     // Set timeout to keep updating this value every 30 seconds...
-    //     const priceObj = await CryptoPrice.getPrice(currency);
-    //     const priceUSD = priceObj.price_usd;
-    //     const total = (parseFloat(priceUSD) * parseFloat(this.state.amountOfCurrency)).toFixed(2);
-    //     return this.setState({
-    //         valueOfCurrency: priceUSD,
-    //         holdingsValue: total
-    //     });
-    // }
-
+  
     render() {
-        const b = this.props.balance;
+        const b = this.props.dinninghall;
         const {style, textStyle, arrowColor, buttons} = this.props;
-        console.log("BALANCE IS " + JSON.stringify(b));
 
-        switch(b.currency) {
-            case "BTC":
-                img = <Image style={{width: 100, height: 100}} source={require("../../assets/crypto/btc.png")} />
-                break;
-            case "ETH":
-                img = <Image style={{width: 100, height: 100}} source={require("../../assets/crypto/eth.png")} />
-                break;
-            case "USD":
-                img = (<View style={{
-                                backgroundColor: 'gold', 
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderRadius: 50,
-                                width: 100, 
-                                height: 100, 
-                            }}>
-                            <Text style={{color: '#0B1823', fontFamily: "Avenir", fontSize: 55, fontWeight:'bold'}}>$</Text>
-                        </View>)
-                break;
+        switch(b.dinninghall) {
             default:
                 img = <Image style={{width: 100, height: 100}} source={require("../../assets/crypto/btc.png")} />
                 break;
         }
         return (<View style={[styles.cryptoSlide, style]}>
                     {img}
-                    <Text style={[styles.text, textStyle]}>{b.amount.toFixed(6)} {b.currency}</Text>
-                    <Text style={[styles.text, textStyle]}>{this.state.holdingsValue}</Text>
+                    <Text style={[styles.text, textStyle]}> {b.name}</Text>
+                    <Text style={[styles.text, textStyle]}> {b.description}</Text>
                     
                     {buttons && <View style={{
                         flexDirection: 'row',
@@ -158,7 +111,7 @@ export default class Slide extends Component {
 }
 
 Slide.propTypes = {
-    balance: PropTypes.object,
+    dinninghall: PropTypes.object,
     style: PropTypes.object,
     textStyle: PropTypes.object,
     arrowColor: PropTypes.string,

@@ -55,7 +55,14 @@ class Home extends React.Component {
                 flex: 1
             }}>
             </MapView>
-            <Text style={{ flex: 1 }}> OI </Text>
+            <DinnerSlider
+                dinninghalls={[
+                    {
+                        name: "dinning 1",
+                        description: "somethig"
+                    }
+                ]}
+                />
           </View>);
     }
 }

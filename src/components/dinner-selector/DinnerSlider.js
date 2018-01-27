@@ -29,7 +29,7 @@ export default class CryptoSlider extends Component {
                 nextButton={<Entypo style={{fontSize: 45, color: arrowColor}} name="chevron-thin-right"/>}>
 
                 {dinninghalls && dinninghalls.map((b, i) => {  
-                    return (<Slide key={i} textStyle={textStyle} arrowColor={arrowColor} buttons={buttons} style={style} balance={b} />);
+                    return (<Slide key={i} textStyle={textStyle} arrowColor={arrowColor} buttons={buttons} style={style} dinninghall={b} />);
                 })}
 
             </Swiper>
