@@ -38,11 +38,16 @@ class Checkout extends React.Component {
         // }
         return (
             <BaseContainer 
-                backgroundColor={'#0B1823'}
+                backgroundColor={'transparent'}
                 noHeader={true} {...{ navigation }}>
+                
                 <StatusBar
                     barStyle="light-content"
                 />
+
+                <Text>
+                    Checkout
+                </Text>
 
                 
             </BaseContainer>);

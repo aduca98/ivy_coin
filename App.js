@@ -118,7 +118,7 @@ const AppNavigator = StackNavigator({
 }, {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "FullNavigator"
+    initialRouteName: "Checkout"
 });
 
 export {AppNavigator}

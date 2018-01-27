@@ -19,7 +19,7 @@ export default class CryptoSlider extends Component {
     }
     
     render() {
-        const {buttons, style, arrowColor, textStyle, balances} = this.props;
+        const {buttons, style, arrowColor, textStyle, dinninghalls} = this.props;
         return(
             <Swiper 
                 onIndexChanged={(index) => console.log(index)}
@@ -28,7 +28,7 @@ export default class CryptoSlider extends Component {
                 prevButton={<Entypo style={{fontSize: 45, color: arrowColor}} name="chevron-thin-left"/>}
                 nextButton={<Entypo style={{fontSize: 45, color: arrowColor}} name="chevron-thin-right"/>}>
 
-                {balances && balances.map((b, i) => {  
+                {dinninghalls && dinninghalls.map((b, i) => {  
                     return (<Slide key={i} textStyle={textStyle} arrowColor={arrowColor} buttons={buttons} style={style} balance={b} />);
                 })}
 
@@ -38,7 +38,6 @@ export default class CryptoSlider extends Component {
 }
 
 CryptoSlider.propTypes = {
-    balances: PropTypes.array.isRequired,
+    dinninghalls: PropTypes.array.isRequired,
     backgroundColor: PropTypes.string,
-    // others for the styling of the swiper component
 }

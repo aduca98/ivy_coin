@@ -12,6 +12,7 @@ import {connect} from 'react-redux';
 import {Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
 
 import forceAuth from '../../utils/ForceAuth';
+import DinnerSlider from '../../components/dinner-selector/DinnerSlider';
 
 class Home extends React.Component {
 
