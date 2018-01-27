@@ -282,7 +282,7 @@ export default {
             food: [
                 {
                     name: "Spicy With",
-                    description: "we need a good description for this one",
+                    description: "a staple of every diet",
                     tags: ["Spicy With", "dinner"],
                     photo: require('./images/spicy-with-cmon-we-can-find-a-better-picture-than-this.jpg')
                 },
@@ -317,9 +317,9 @@ export default {
                     photo: require('./images/cheeseburger.jpg')
                 },
                 {
-                    name: "Tacos (x3)",
+                    name: "Tacos",
                     description: "soft corn tacos, with a plethora of topping options",
-                    tags: ["Tacos (x3)", "dinner","gluten-free"],
+                    tags: ["Tacos", "dinner","gluten-free"],
                     photo: require('./images/beef-tacos.jpg')
                 }
             ]
@@ -327,7 +327,7 @@ export default {
         6: {
             name: "Ivy Room",
             description: "The Ivy Room features a daily selection of hot entrees, made-to-order sandwiches and salads, homemade soups, and more.",
-            photo: require('./images/need-a-picture.jpg'),
+            photo: require('./images/Ratty.jpg'),
             location: {
                 address: "Lower Level, 144 Thayer St, Providence, RI 02906",
                 lat: 41.825218,
