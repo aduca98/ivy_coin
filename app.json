@@ -1,0 +1,20 @@
+{
+    "expo": {
+        "scheme": "cryptastic",
+        "sdkVersion": "23.0.0",
+        "orientation": "portrait",
+        "privacy": "public",
+        "icon": "./app.png",
+        "primaryColor": "#0B1823",
+        "splash": {
+            "image": "./splash.png",
+            "resizeMode": "cover",
+            "backgroundColor": "#0B1823"
+        },
+        "androidStatusBarColor": "#0B1823",
+        "androidStatusBar": {
+            "barStyle": "light-content",
+            "backgroundColor": "#0B1823"
+        }
+    }
+}
