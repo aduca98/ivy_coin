@@ -67,8 +67,7 @@ export default class Drawer extends React.Component {
             });
         //
         return (
-            <View style={[Styles.flexGrow, {width: 300}]}>
-                <Image source={Images.drawer} style={[StyleSheet.absoluteFill, style.img]} />
+            <View style={[Styles.flexGrow, {width: 300, backgroundColor: 'red'}]}>
                 <View style={[StyleSheet.absoluteFill, style.background]} />
                 <SafeAreaView style={StyleSheet.absoluteFill}>
                     <View style={[style.container]}>
@@ -87,7 +86,7 @@ export default class Drawer extends React.Component {
                             top: 150, 
                             height: WindowDimensions.height - 200, 
                             paddingTop: 0,
-                            backgroundColor: '#0B1823'}]}>
+                            }]}>
                             
                             <View style={[style.drawerItems, {
                                 width: 300, 
