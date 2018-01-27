@@ -146,6 +146,17 @@ class Home extends React.Component {
 
                         </ScrollView>
 
+                        <TouchableOpacity 
+                            onPress={() => this.props.navigation.navigate("Food_Display")}>
+                            <Text>See Food</Text>
+                            
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity 
+                            onPress={() => this.props.navigation.navigate("Deliveries_Display")}>
+                            <Text>Deliver Food</Text>
+                        </TouchableOpacity>
+                        
                     </View>
                         
                 </MapView>);
