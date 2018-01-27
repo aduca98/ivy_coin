@@ -13,55 +13,55 @@ export default {
                 {
                     name: "Cheese Pizza",
                     description: "fresh dough from our bakeshop, house-made sauce, and a blend of cheeses, hearth-baked for a perfect slice",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Cheese Pizza", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/cheesePizza.jpg')
                 },
                 {
                     name: "Pepperoni Pizza",
                     description: "spicy pepperoni slices on our hand-made cheese pizza",
-                    tags: ["lunch", "dinner"],
+                    tags: ["Pepperoni Pizza", "lunch", "dinner"],
                     photo: require('./images/whatever-file-name-is.png')
                 },
                 {
                     name: "Pepperoni & Meatball",
                     description: "classic peperoni with house made meatballs",
-                    tags: ["dinner"],
+                    tags: ["Pepperoni & Meatball", "dinner"],
                     photo: require('./images/pepPizza.jpg')
                 },
                 {
                     name: "Cookie Slice",
                     description: "giant chocolate chip cookie, baked in a pizza pan. served warm :)",
-                    tags: ["lunch", "dinner", "desert"],
+                    tags: ["Cookie Slice", "lunch", "dinner", "desert"],
                     photo: require('./images/cookiePizza.jpg')
                 },
                 {
                     name: "Brownie",
                     description: "giant brownie, baked in a pizza pan. served warm :)",
-                    tags: ["lunch", "dinner", "desert"],
+                    tags: ["Brownie", "lunch", "dinner", "desert"],
                     photo: require('./images/BrowniePizza.jpg')
                 },
                 {
                     name: "Bacon & Feta",
                     description: "niman ranch bacon & narragansett creamery feta, house made pizza sauce",
-                    tags: ["dinner"],
+                    tags: ["Bacon & Feta", "dinner"],
                     photo: require('./images/bacon&Feta.jpg')
                 },
                 {
                     name: "Brunch Burrito",
                     description: "an andrews classic! get here early to avoid the line :)",
-                    tags: ["breakfast", "lunch"],
+                    tags: ["Brunch Burrito", "breakfast", "lunch"],
                     photo: require('./images/brunchBurrito.jpg')
                 },
                 {
                     name: "Pho",
                     description: "Our twist on the classic Vietnamese soup. start with fresh rice noodles, cooked to order. choose from an array of vegetables, house roasted sirloin beef, all natural chicken breast or tofu. finish with your choice of chicken broth, vegetable broth or green curry broth.",
-                    tags: ["lunch","dinner"],
+                    tags: ["Pho", "lunch","dinner"],
                     photo: require('./images/pho.jpg')
                 },
                 {
                     name: "Granola Bowl",
                     description: "andrews famous granola, local yogurt, fresh fruit. rotating toppings available",
-                    tags: ["breakfast", "lunch"],
+                    tags: ["Granola Bowl", "breakfast", "lunch"],
                     photo: require('./images/gBowl.jpg')
                 },
             ]
@@ -79,43 +79,43 @@ export default {
                 {
                     name: "Chicken Fingers",
                     description: "a Friday specialty of the VDub",
-                    tags: ["lunch","dinner"],
+                    tags: ["Chicken Fingers", "lunch","dinner"],
                     photo: require('./images/chicken-fingers.jpg')
                 },
                 {
                     name: "Waffles",
                     description: "crisp and freshly-made",
-                    tags: ["breakfast", "lunch", "vegetarian"],
+                    tags: ["Waffles", "breakfast", "lunch", "vegetarian"],
                     photo: require('./images/waffles.jpg')
                 },
                 {
                     name: "Burrito Bowl",
                     description: "don't forget to add a note to this custom order!",
-                    tags: ["lunch","dinner","vegetarian", "gluten-free"],
+                    tags: ["Burrito Bowl", "lunch","dinner","vegetarian", "gluten-free"],
                     photo: require('./images/burrito-bowl.jpg')
                 },
                 {
                     name: "Salad Bar",
                     description: "don't forget to add a note to this custom order!",
-                    tags: ["lunch","dinner","vegetarian","gluten-free"],
+                    tags: ["Salad Bar", "lunch","dinner","vegetarian","gluten-free"],
                     photo: require('./images/salad-bar.jpg')
                 },
                 {
                     name: "Steak Fries",
                     description: "large, thick, wedge-shaped fries",
-                    tags: ["lunch", "dinner", "vegetarian", "gluten-free"],
+                    tags: ["Steak Fries", "lunch", "dinner", "vegetarian", "gluten-free"],
                     photo: require('./images/steak-fries.jpg')
                 },
                 {
                     name: "Zuchinni Muffins",
                     description: "a tasty desert option for the health-concious",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Zuchinni Muffins", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/zucchini-muffins.jpg')
                 },
                 {
                     name: "Lentil Stew",
                     description: "a thick stew of lentils and sausage",
-                    tags: ["lunch", "dinner"],
+                    tags: ["Lentil Stew", "lunch", "dinner"],
                     photo: require('./images/lentil-stew.jpg')
                 }
             ]
@@ -133,31 +133,31 @@ export default {
                 {
                     name: "Chicken, Kale & Sweet Potato Soup",
                     description: "chicken, kale, sweet potato, kidney beans, vegetables in a hearty chicken broth",
-                    tags: ["lunch", "dinner", "gluten-free"],
+                    tags: ["Chicken, Kale & Sweet Potato Soup", "lunch", "dinner", "gluten-free"],
                     photo: require('./images/CKSPSoup.jpg')
                 },
                 {
                     name: "Baked Potato Soup",
                     description: "potatoes, uncured bacon, chives, and spice in a creamy chicken broth",
-                    tags: ["lunch", "dinner", "gluten-free"],
+                    tags: ["Baked Potato Soup", "lunch", "dinner", "gluten-free"],
                     photo: require('./images/BPSoup.jpg')
                 },
                 {
                     name: "Butternut Squash & Apple Soup",
                     description: "pureed butternut squash and apples with fresh rosemary in a flavorful chicken broth with cream and butter",
-                    tags: ["lunch", "dinner", "gluten-free"],
+                    tags: ["Butternut Squash & Apple Soup", "lunch", "dinner", "gluten-free"],
                     photo: require('./images/BSSoup.jpg')
                 },
                 {
                     name: "Madras Chicken Curry with Green Beans",
                     description: "white meat chicken, coconut milk, tamarind paste, red chili powder, coriander and cumin powder, star anise, herbs, spices and green beans",
-                    tags: ["lunch", "dinner"],
+                    tags: ["Madras Chicken Curry with Green Beans", "lunch", "dinner"],
                     photo: require('./images/MadrasChicken.jpg')
                 },
                 {
                     name: "Vegetable Dhanask",
                     description: "butternut squash, eggplant, carrot, green beans, cauliflower, corn, lima bans, coriander and cumin powder, tamarind paste and coconut paste",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Vegetable Dhanask", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/VegieDhansak.jpg')
                 },
             ]
@@ -175,97 +175,97 @@ export default {
                 {
                     name: "Scrambled Eggs",
                     description: "eggs stirred and beaten together in a pan while being gently heated",
-                    tags: ["breakfast", "lunch", "vegetarian", "gluten-free"],
+                    tags: ["Scrambled Eggs", "breakfast", "lunch", "vegetarian", "gluten-free"],
                     photo: require('./images/scrambled-eggs.jpg')
                 },
                 {
                     name: "Pancakes",
                     description: "prepared from a starch-based batter with eggs, milk, and butter and cooked on a griddle",
-                    tags: ["breakfast", "vegetarian"],
+                    tags: ["Pancakes", "breakfast", "vegetarian"],
                     photo: require('./images/pancake.png')
                 },
                 {
                     name: "Breakfast Sausage",
                     description: "a fresh pork sausage",
-                    tags: ["breakfast", "gluten-free"],
+                    tags: ["Breakfast Sausage", "breakfast", "gluten-free"],
                     photo: require('./images/breakfast-sausage.png')
                 },
                 {
                     name: "Home Fries with Garlic",
                     description: "potatoes cooked in oil and butter and then seasoned with garlic and onion powders",
-                    tags: ["breakfast", "lunch", "vegetarian", "gluten-free"],
+                    tags: ["Home Fries with Garlic", "breakfast", "lunch", "vegetarian", "gluten-free"],
                     photo: require('./images/home-fries.jpg')
                 },
                 {
                     name: "Bacon",
                     description: "delicious cured and smoked bacon",
-                    tags: ["breakfast"],
+                    tags: ["Bacon","breakfast"],
                     photo: require('./images/')
                 },
                 {
                     name: "Whole Wheat Penne Pasta",
                     description: "cylindrical-shaped pasta",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Whole Wheat Penne Pasta", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/whatever-file-name-is.png')
                 },
                 {
                     name: "Red Potato Frittata",
                     description: "yummy omelette good for breakfast or lunch",
-                    tags: ["breakfast", "lunch", "dinner", "vegetarian"],
+                    tags: ["Red Potato Frittata", "breakfast", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/fritata.jpg')
                 },
                 {
                     name: "Tamale Pie",
                     description: "a pie and casserole dish prepared with a cornmeal crust",
-                    tags: ["lunch", "dinner"],
+                    tags: ["Tamale Pie", "lunch", "dinner"],
                     photo: require('./images/tamale-pie-3-550.jpg')
                 },
                 {
                     name: "Veggie Pizza",
                     description: "vegetarian pizza, order by the slice",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Veggie Pizza", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/veg-pizza.jpg')
                 },
                 {
                     name: "Pepperoni Pizza",
                     description: "classic pepperoni, order by the slice",
-                    tags: ["lunch", "dinner"],
+                    tags: ["Pepperoni Pizza", "lunch", "dinner"],
                     photo: require('./images/pepperoni-pizza.jpg')
                 },
                 {
                     name: "Grilled Itallian Chicken",
                     description: "grilled chicken, for the health-concious consumer",
-                    tags: ["lunch", "dinner", "gluten-free"],
+                    tags: ["Grilled Itallian Chicken", "lunch", "dinner", "gluten-free"],
                     photo: require('./images/itallian-chicken.jpg')
                 },
                 {
                     name: "Fried Southwest Black Bean Burger",
                     description: "a vegetarian option for burger-lovers",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Fried Southwest Black Bean Burger", "lunch", "dinner", "vegetarian"],
                     photo: require('./images/black-bean-burger.jpg')
                 },
                 {
                     name: "Curly Fries",
                     description: "crispy potatoes fried, spiralized, and seasoned",
-                    tags: ["lunch", "dinner", "gluten-free", "vegetarian"],
+                    tags: ["Curly Fries", "lunch", "dinner", "gluten-free", "vegetarian"],
                     photo: require('./images/curly-fries.jpg')
                 },
                 {
                     name: "Waffle Fries",
                     description: "crispy and crunchy waffle-shaped potatoes",
-                    tags: ["lunch", "dinner", "gluten-free", "vegetarian"],
+                    tags: ["Waffle Fries", "lunch", "dinner", "gluten-free", "vegetarian"],
                     photo: require('./images/waffle-fries.jpg')
                 },
                 {
                     name: "m&m Cookies",
                     description: "warm, oven-baked cookies with m&m chocolates",
-                    tags: ["lunch", "dinner","vegetarian", "desert"],
+                    tags: ["m&m Cookies", "lunch", "dinner","vegetarian", "desert"],
                     photo: require('./images/mm-cookies.jpg')
                 },
                 {
                     name: "S'mores Cupcakes",
                     description: "cupcakes with hershey's chocolate and marshmallow",
-                    tags: ["lunch", "dinner","vegetarian", "desert"],
+                    tags: ["S'mores Cupcakes", "lunch", "dinner","vegetarian", "desert"],
                     photo: require('./images/smores-cupcake.jpg')
                 }
             ]
@@ -283,43 +283,43 @@ export default {
                 {
                     name: "Spicy With",
                     description: "we need a good description for this one",
-                    tags: ["dinner"],
+                    tags: ["Spicy With", "dinner"],
                     photo: require('./images/spicy-with-cmon-we-can-find-a-better-picture-than-this.jpg')
                 },
                 {
                     name: "Waffle Fries",
                     description: "crispy and crunchy waffle-shaped potatoes",
-                    tags: ["dinner", "vegetarian"],
+                    tags: ["Waffle Fries", "dinner", "vegetarian"],
                     photo: require('./images/waffle-fries.jpg')
                 },
                 {
                     name: "Mac and Cheese Bacon Burger",
                     description: "1/4 angus beef burger, topped with Blount mac and cheese sprinkled with bacon bits. Served on a Calise potato bun.",
-                    tags: ["dinner"],
+                    tags: ["Mac and Cheese Bacon Burger", "dinner"],
                     photo: require('./images/mac-n-cheese-bacon-burger.jpg')
                 },
                 {
                     name: "Cobb Salad",
                     description: "lettuce, cheese, bacon bits, tomatoes, and croutons",
-                    tags: ["dinner"],
+                    tags: ["Cobb Salad", "dinner"],
                     photo: require('./images/cobb-salad.jpg')
                 },
                 {
                     name: "Caesar Salad",
                     description: "fresh chopped romaine lettuce, grilled chicken, shaved parmesan cheese, garlic croutons, creamy caesar dressing",
-                    tags: ["dinner"],
+                    tags: ["Caesar Salad", "dinner"],
                     photo: require('./images/caesar-salad.jpg')
                 },
                 {
                     name: "Cheeseburger",
                     description: "flame grilled quarter pound burger. served on a potato roll with your choice of condiments and sauces.",
-                    tags: ["dinner"],
+                    tags: ["Cheeseburger", "dinner"],
                     photo: require('./images/cheeseburger.jpg')
                 },
                 {
                     name: "Tacos (x3)",
                     description: "soft corn tacos, with a plethora of topping options",
-                    tags: ["dinner","gluten-free"],
+                    tags: ["Tacos (x3)", "dinner","gluten-free"],
                     photo: require('./images/beef-tacos.jpg')
                 }
             ]
@@ -337,37 +337,37 @@ export default {
                 {
                     name: "Veggie Tacos",
                     description: "don't forget to add a note to this custom order!",
-                    tags: ["dinner", "vegetarian"],
+                    tags: ["Veggie Tacos", "dinner", "vegetarian"],
                     photo: require('./images/beggie-tacos.jpg')
                 },
                 {
                     name: "Avocado Toast",
                     description: "don't forget to add a note to this custom order!",
-                    tags: ["lunch", "dinner", "vegetarian"],
+                    tags: ["Avocado Toast","lunch", "dinner", "vegetarian"],
                     photo: require('./images/avocado-toast.jpg')
                 },
                 {
                     name: "Smoothie",
                     description: "don't forget to add a note to this custom order!",
-                    tags: ["lunch", "dinner", "gluten-free", "vegetarian"],
+                    tags: ["Smoothie","lunch", "dinner", "gluten-free", "vegetarian"],
                     photo: require('./images/smoothies.jpg')
                 },
                 {
-                    name: "Mashed Potatoes",
+                    name: "Mashed Potatoes", 
                     description: "whipped to creamy perfection",
-                    tags: ["lunch", "dinner", "vegetarian", "gluten-free"],
+                    tags: ["Mashed Potatoes", "lunch", "dinner", "vegetarian", "gluten-free"],
                     photo: require('./images/mashed-potatoes.jpg')
                 },
                 {
                     name: "Chicken and Dumplings",
                     description: "a creamy mix of two faculty favorites",
-                    tags: ["lunch"],
+                    tags: ["Chicken and Dumplings", "lunch"],
                     photo: require('./images/chicken-dumplings.jpg')
                 },
                 {
                     name: "Custom Falafel Sandwich",
                     description: "don't forget to add a note to this order!",
-                    tags: ["dinner", "vegetarian"],
+                    tags: ["Custom Falafel Sandwich", "dinner", "vegetarian"],
                     photo: require('./images/falafel-sandwich.jpg')
                 }
             ]
