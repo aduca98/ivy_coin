@@ -10,7 +10,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {H1, Button, Left, Header} from "native-base";
-import CryptoPrice from '../../api/CryptoPrice';
 import Slide from './Slide';
 
 export default class CryptoSlider extends Component {

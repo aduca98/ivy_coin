@@ -29,14 +29,10 @@ import RadioButton from 'react-native-radio-button'
 import {Entypo} from '@expo/vector-icons';
 
 // Api / modules
-import TransactionService from '../../api/TransactionService';
 import Stripe from '../../utils/Stripe';
 import {CreditCard} from '../../components/credit-card';
-import PaymentService from '../../api/PaymentService';
-import UserService from '../../api/UserService';
 import Loading from '../../components/Loading';
 import forceAuth from '../../utils/ForceAuth';
-import CryptoPrice from '../../api/CryptoPrice';
 import {updateCards} from '../../modules/cards';
 import {updateBalances} from '../../modules/transactions';
 
@@ -93,40 +89,28 @@ class BuyCrypto extends React.Component {
         var month = this.state.expiry.substring(0,2);
         var year = this.state.expiry.substring(2);
 
-        try {
-            
-            const res = await PaymentService.purchaseCrypto(currency, amount, this.state.selectedCard);
-            console.log(res);
-            var balance = res.balance;
-            console.log(balance);
-            this.setState({
-                balances: balance,
-                loading: false
-            });
-            this.props.navigation.navigate("Transactions");
-
-        } catch(e) {
-            alert(e.message);
-            this.setState({
-                loading: false,
-            })
-        }
+        this.props.navigation.navigate("Transactions");
 
     }
     async _fetchBalances() {
-        var res = await UserService.balance(["BTC", "ETH"]);
-        var balances = res.balances;
-        this.props.updateBalances(balances);
+        
+        this.props.updateBalances([
+            {
+                currency: "IVY_COIN",
+                amount: "56.67"
+            }
+        ]);
         // Shouldn't have to do this...
         this.setState({
             balances: balances
         })
     }
     async _fetchCards() {
-        const res = await PaymentService.fetchCreditCards();
-        const cards = res.sources;
-        console.log("CARDS " + cards);
-        this.props.updateCards(cards);
+        this.props.updateCards([
+            {
+
+            }
+        ]);
         console.log("CARDS " + this.props.cards);
     }
     async componentWillMount() {
@@ -277,11 +261,7 @@ class BuyCrypto extends React.Component {
                             flex: .25,
                         }}>
 
-                        <CryptoSelectorV2
-                            currency={this.state.selectedCurrency}
-                            balances={this.state.balances}
-                            selectCurrency={this.selectCurrency} /> 
-                    
+                        
                     </View>*/}
 
                     <View style={{
@@ -553,20 +533,18 @@ BuyCrypto.propTypes = {
 
 function mapStateToProps(state) { 
     return {
-        balances: state.transactions.balances,
-        cards: state.cards.cards,
-        defaultCard: state.cards.defaultCard
+       
     }; 
 } 
 
 function mapDispatchToProps(dispatch) {
     return {
-        updateBalances(balances) {
-            dispatch(updateBalances(balances))
-        },
-        updateCards(cards) {
-             dispatch(updateCards(cards))
-        }
+        // updateBalances(balances) {
+        //     dispatch(updateBalances(balances))
+        // },
+        // updateCards(cards) {
+        //      dispatch(updateCards(cards))
+        // }
     }
 }
 

@@ -7,8 +7,6 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import {connect} from 'react-redux';
 
 import variables from "../../assets/native-base-theme/variables/commonColor";
-import Stats from '../../components/transaction-stats';
-import UserService from '../../api/UserService';
 import {addFullUser} from '../../modules/user';
 
 class Profile extends React.Component {
@@ -23,15 +21,12 @@ class Profile extends React.Component {
     }
 
     async componentWillMount() {
-        var res = await UserService.profile();
-        var user = res.user;
-        this.props.addFullUser(user);
         this.setState({
-            firstName: user.firstName,
-            lastName: user.lastName,
-            email: user.email,
-            pictureUrl: user.pictureUrl,
-            phoneNumber: user.phoneNumber
+            firstName: "Andrew",
+            lastName: "Duca",
+            email: "andrew.j.duca@gmail.com",
+            pictureUrl: "http://healthsupple.org/images/burger.jpg",
+            phoneNumber: "8589997892"
         });
     }
     render() {

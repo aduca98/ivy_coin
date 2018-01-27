@@ -23,7 +23,6 @@ import {MaterialIcons} from '@expo/vector-icons';
 import {AnimatedView} from "../../components/Animations";
 import variables from "../../assets/native-base-theme/variables/commonColor";
 
-import * as AuthService from '../../api/AuthService';
 import Storage from '../../api/Storage';
 import {TextInputMask} from 'react-native-masked-text'
 import Loading from '../../components/Loading';
@@ -47,11 +46,7 @@ export default class Login extends React.Component {
         this.login = this.login.bind(this);
     }
     async componentWillMount() {
-        const jwt = await Storage.getJwt();
-        // Maybe remove this not sure yet...
-        const password = await Storage.getPassword();
-        const username = await Storage.getUsername();
-
+        
         cacheImages([
             require('../../assets/logo.png'),
         ]);
@@ -67,46 +62,21 @@ export default class Login extends React.Component {
     goToPassword() {
         this.password.focus();
     }
-    signUp() {
-        this.props.navigation.navigate("SignUp");
-    }
     next() {
         this.setState({
             enteredPhone: true
         })
     }
     async login() {
-        this.setState({
-            loading: true
-        })
-        if(!this.state.email || !this.state.password) {
-            return this.setState({
-                loading: false,
-                errorMessage: "Missing fields."
-            })
-        }
-        try {
-            const res = await AuthService.login(this.state.email.toLowerCase(), this.state.password);
-            console.log(res);
-            await Storage.setJwt(res.jwt);
-            await Storage.setPassword(this.state.password);
-            await Storage.setUsername(this.state.email);
-            this.setState({
-                loading: false
-            });
-            this.props.navigation.navigate("Home");
-        } catch(e) {
-            console.log(e);
-            this.setState({
-                errorMessage: e.message,
-                loading: false
-            });
-        }
+        // this.setState({
+        //     loading: true
+        // })
+        this.props.navigation.navigate("Home");
     }
     render() {
-        if(this.state.loading) {
-            return <Loading />
-        }
+        // if(this.state.loading) {
+        //     return <Loading />
+        // }
         return (<Container style={{
                 backgroundColor: '#071B38'
             }} safe={false}>

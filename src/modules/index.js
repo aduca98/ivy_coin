@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import transactions from './transactions';
 import user from './user';
 import cards from './cards';
+import shoppingCart from './shopping-cart';
 
 const reducer = combineReducers({
-  transactions,
   user,
-  cards
+  cards,
+  shoppingCart
 });
 
 export default reducer;
