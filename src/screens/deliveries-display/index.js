@@ -171,8 +171,8 @@ class DeliveriesDisplay extends React.Component {
                                 ref={'amount'} 
                                 placeholder="Search..."
                                 keyboardType={"default"}
-                                value = {this.state.search}
-                                onChangeText={(val) => this.setState({search: val})}
+                                value = {this.state.amount}
+                                onChangeText={(val) => this._onChangeAmount(val)}
                             />
                     </View>
 
@@ -227,7 +227,7 @@ class DeliveriesDisplay extends React.Component {
                                         onPress={() => this.props.navigation.navigate("Details")}
                                         style={{
                                             width: 70,
-                                            backgroundColor: '#fff',
+                                            backgroundColor: 'brown',
                                             padding: 15,
                                             alignItems: 'center',
                                             borderRadius: 50,
@@ -235,10 +235,9 @@ class DeliveriesDisplay extends React.Component {
                                         }}>
 
                                         <Text style={{
-                                            color: '#ECBE00', 
+                                            color: '#fff', 
                                             fontFamily: 'Avenir-Book',
                                             fontSize: 20,
-                                            fontWeight: 'bold'
                                         }}>Details</Text>
                                     </TouchableOpacity>
                                     <View style={{flex: .2}} />
@@ -247,7 +246,7 @@ class DeliveriesDisplay extends React.Component {
                                         style={{
                                             width: 100,
                                             flex: 0.4,
-                                            backgroundColor: '#ECBE00',
+                                            backgroundColor: 'brown',
                                             padding: 15,
                                             alignItems: 'center',
                                             borderRadius: 50
@@ -257,7 +256,6 @@ class DeliveriesDisplay extends React.Component {
                                             color: '#fff', 
                                             fontFamily: 'Avenir-Book',
                                             fontSize: 20,
-                                            fontWeight: 'bold'
                                         }}>Accept</Text>
                                     </TouchableOpacity>
                                     </View>

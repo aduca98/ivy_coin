@@ -2,7 +2,7 @@
 import moment from "moment";
 import autobind from 'autobind-decorator';
 import * as React from "react";
-import {StatusBar, WebView, ScrollView, TextInput, Text, Image, StyleSheet, View, TouchableOpacity} from "react-native";
+import {StatusBar, ScrollView, TextInput, Text, Image, StyleSheet, View, TouchableOpacity} from "react-native";
 import {H1, Button, Left, Header} from "native-base";
 import { LinearGradient } from 'expo';
 import {BaseContainer, Circle, Styles, Images, WindowDimensions} from "../../components";
@@ -19,8 +19,7 @@ class FoodDisplay extends React.Component {
     state = {
         name: "",
         picture: "",
-        food: [],
-        facebook: false
+        food: []
     };
 
     constructor() {
@@ -49,6 +48,37 @@ class FoodDisplay extends React.Component {
             ]
         });
         
+
+        // Will grab param passed to this route but for now...
+        // this.setState({
+        //     name: "Andrews",
+        //     picture: "http://schwartzsilver.com/wp-content/uploads/2014/01/Andrews-1_bright-640x432.jpg",
+        //     food: [{
+        //         name: "Cheeseburger",
+        //         description: "What Andrew always uses for displaying random shit, I don't personally get it but ah well",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }, {
+        //         name: "Cheeseburger",
+        //         description: "burger",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }, {
+        //         name: "Cheeseburger",
+        //         description: "burger",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }, {
+        //         name: "Cheeseburger",
+        //         description: "burger",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }, {
+        //         name: "Cheeseburger",
+        //         description: "burger",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }, {
+        //         name: "Cheeseburger",
+        //         description: "burger",
+        //         image: "http://healthsupple.org/images/burger.jpg"
+        //     }]
+        // });
     }
 
     render() {
@@ -58,12 +88,6 @@ class FoodDisplay extends React.Component {
         // if(this.state.loading) {
         //     return <Loading />
         // }
-        if(this.state.facebook) {
-            return(<WebView
-                            source={{uri: 'https://www.facebook.com/andrew.duca.39'}}
-                            style={{marginTop: 30}}
-                        />)
-        }
         return (
             <BaseContainer
                 backgroundColor={'#efefef'}
@@ -169,18 +193,16 @@ class FoodDisplay extends React.Component {
                                 }}> (858)-999-7892 </Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity 
-                                onPress={() => this.setState({facebook: true})}
-                                style={{
-                                    width: 150,
-                                    height: 40,
-                                    marginTop: 15,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    paddingVertical: 5,
-                                    backgroundColor: '#3B5998',
-                                    borderRadius: 50,
-                                }}>
+                            <TouchableOpacity style={{
+                                width: 150,
+                                height: 40,
+                                marginTop: 15,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                paddingVertical: 5,
+                                backgroundColor: '#3B5998',
+                                borderRadius: 50,
+                            }}>
                                 <Text style={{
                                     backgroundColor: 'transparent',
                                     color: 'white',
@@ -249,7 +271,7 @@ class FoodDisplay extends React.Component {
                                             height: 50,
                                             alignSelf: 'center',
 
-                                            backgroundColor: '#ECBE00',
+                                            backgroundColor: 'brown',
                                             padding: 0,
                                             alignItems: 'center',
                                             justifyContent: 'center',

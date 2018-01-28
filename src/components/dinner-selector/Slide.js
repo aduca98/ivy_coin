@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#56A0ED'
+        backgroundColor:'transparent'// '#56A0ED'
     },
     text: {
         marginTop: -85,

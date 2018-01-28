@@ -33,7 +33,7 @@ class FoodDisplay extends React.Component {
     }
 
     async componentWillMount() {
-        
+
         const index = this.props.navigation.state.params.dinningHall;
         return this.setState({
             name: dinningHalls.dinningHalls[index].name,
@@ -71,7 +71,7 @@ class FoodDisplay extends React.Component {
                 <StatusBar
                     barStyle="dark-content"
                 />
-            
+
                 {/* Header */}
                 <View style={{
                     padding:0,
@@ -89,7 +89,7 @@ class FoodDisplay extends React.Component {
                             width: WindowDimensions.width,
                         }]} source = {this.state.picture}>
                     </Image>
-                    
+
                     <View style={{
                             flex: .25,
                             flexDirection: 'row'
@@ -107,7 +107,7 @@ class FoodDisplay extends React.Component {
                                     left: 15,
                                     top: 0
                                 }} name='ios-arrow-round-back-outline' />
-                                
+
                             </Button>
                         </Left>
 
@@ -167,7 +167,7 @@ class FoodDisplay extends React.Component {
                         onChangeText={(val) => this._onChangeAmount(val)}
                     />
                 </View>
-            
+
                 <ScrollView>
                     {this.state.food && this.state.food.map((f, i) => {
                         return(f.photo && <View style= {{
