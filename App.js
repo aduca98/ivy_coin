@@ -95,7 +95,7 @@ const DrawerNavigation = DrawerNavigator({
 }, {
     drawerWidth: 300,
     contentComponent: Drawer,
-    initialRouteName: "Manage_Crypto",
+    initialRouteName: "Home",
     headerMode: "none",
 });
 

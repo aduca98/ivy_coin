@@ -5,7 +5,7 @@ const ADD_SHOPPING = 'ADD_SHOPPING';
 
 // Initial state
 const initialState = {
-	items: [{}, {}]
+	items: []
 };
 
 /**

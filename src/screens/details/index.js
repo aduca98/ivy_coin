@@ -271,7 +271,7 @@ class FoodDisplay extends React.Component {
                                             height: 50,
                                             alignSelf: 'center',
 
-                                            backgroundColor: 'brown',
+                                            backgroundColor: '#ECBE00',
                                             padding: 0,
                                             alignItems: 'center',
                                             justifyContent: 'center',

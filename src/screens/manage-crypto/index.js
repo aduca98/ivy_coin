@@ -15,7 +15,7 @@ import forceAuth from '../../utils/ForceAuth';
 import DinnerSlider from '../../components/dinner-selector/DinnerSlider';
 import ShoppingCart from '../../components/ShoppingCart';
 import dinningHalls from '../../assets/dinning-halls/dinning-halls';
-import StellarController from '../../utils/Stellar';
+// import StellarController from '../../utils/Stellar';
 
 class ManageCrypto extends React.Component {
 
@@ -28,7 +28,7 @@ class ManageCrypto extends React.Component {
     }
    
     async componentWillMount() {
-        const {} = StellarController.createUserKeys();
+        // const {} = StellarController.createUserKeys();
     }
     onRegionChange(region) {
         
