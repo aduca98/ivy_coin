@@ -244,16 +244,16 @@ class Home extends React.Component {
                             <MaterialCommunityIcons
                                 style={{
                                     fontSize: 25,
-                                    color: 'black',
-                                    marginRight: 10
+                                    marginRight: 10,
+                                    color: 'white',
                                 }}
                                 name="food" />
                             <Text
                                 style={{
                                 backgroundColor: 'transparent',
                                 fontSize: 17,
-                                color: '#000',
                                 fontWeight: 'bold',
+                                color: 'white',
                                 fontFamily: 'Avenir-Book'
                                 }}>
                                 Order
@@ -278,7 +278,7 @@ class Home extends React.Component {
                             <MaterialCommunityIcons
                                 style={{
                                     fontSize: 25,
-                                    color: 'black',
+                                    color: 'white',
                                     marginRight: 10
                                 }}
                                 name="truck" />
@@ -288,7 +288,7 @@ class Home extends React.Component {
                                     backgroundColor: 'transparent',
                                     fontSize: 17,
                                     fontWeight: 'bold',
-                                    color: '#000',
+                                    color: 'white',
                                     fontFamily: 'Avenir-Book'
                                 }}>
                                 Deliver

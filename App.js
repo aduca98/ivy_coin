@@ -88,10 +88,8 @@ const AuthNavigation = StackNavigator({
 
 const DrawerNavigation = DrawerNavigator({
     Home: { screen: Home },
+    Checkout: { screen: Checkout },
     Profile: { screen: Profile },
-    FoodDisplay: { screen: FoodDisplay },
-    DeliveriesDisplay: { screen: DeliveriesDisplay },
-    Checkout: { screen: Checkout }
 }, {
     drawerWidth: 300,
     contentComponent: Drawer,

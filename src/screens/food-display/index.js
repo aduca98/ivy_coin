@@ -13,60 +13,48 @@ import {Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
 
 import dinningHalls from '../../assets/dinning-halls/dinning-halls';
 import ShoppingCart from '../../components/ShoppingCart';
+import {addToCart, removeFromCart} from '../../modules/shopping-cart';
+var _ = require('lodash');
 
 class FoodDisplay extends React.Component {
 
     state = {
         name: "",
         picture: "",
-        food: []
+        food: [],
+        // Really shitty way to do this
+        takenIndexs: []
     };
 
     constructor() {
         super();
+        this.addToCart = this.addToCart.bind(this);
+        this.isInCart = this.isInCart.bind(this);
     }
 
     async componentWillMount() {
         
         const index = this.props.navigation.state.params.dinningHall;
-        
         return this.setState({
             name: dinningHalls.dinningHalls[index].name,
             picture: dinningHalls.dinningHalls[index].photo,
             food: dinningHalls.dinningHalls[index].food,
         });
-        
+    }
 
-        // Will grab param passed to this route but for now...
-        // this.setState({
-        //     name: "Andrews",
-        //     picture: "http://schwartzsilver.com/wp-content/uploads/2014/01/Andrews-1_bright-640x432.jpg",
-        //     food: [{
-        //         name: "Cheeseburger",
-        //         description: "What Andrew always uses for displaying random shit, I don't personally get it but ah well",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }, {
-        //         name: "Cheeseburger",
-        //         description: "burger",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }, {
-        //         name: "Cheeseburger",
-        //         description: "burger",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }, {
-        //         name: "Cheeseburger",
-        //         description: "burger",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }, {
-        //         name: "Cheeseburger",
-        //         description: "burger",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }, {
-        //         name: "Cheeseburger",
-        //         description: "burger",
-        //         image: "http://healthsupple.org/images/burger.jpg"
-        //     }]
-        // });
+    addToCart(item) {
+        this.props.addToCart(item);
+    }
+    removeFromCart(item) {
+        this.props.removeFromCart(item);
+    }
+    isInCart(item) {
+        for(var i = 0; i < this.props.items; i++) {
+            if(_.isEqual(item.name, this.props.items[i].name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     render() {
@@ -220,14 +208,14 @@ class FoodDisplay extends React.Component {
                                             fontSize: 10
                                         }}>{f.description} </Text>}
                                     </View>
-                                    <TouchableOpacity
-                                        onPress={() => alert("Pressed.")}
+                                    {!this.isInCart(f) && <TouchableOpacity
+                                        onPress={() => this.addToCart(f)}
                                         style={{
                                             width: 50,
                                             height: 50,
                                             alignSelf: 'center',
 
-                                            backgroundColor: 'brown',
+                                            backgroundColor: '#ECBE00',
                                             padding: 0,
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -241,7 +229,29 @@ class FoodDisplay extends React.Component {
                                             backgroundColor: 'transparent',
                                             fontWeight: 'bold'
                                         }}>+</Text>
-                                    </TouchableOpacity>
+                                    </TouchableOpacity>}
+                                    {this.isInCart(f) && <TouchableOpacity
+                                        onPress={() => this.removeFromCart(f)}
+                                        style={{
+                                            width: 50,
+                                            height: 50,
+                                            alignSelf: 'center',
+                                            backgroundColor: 'red',
+                                            padding: 0,
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            borderRadius: 60
+                                        }}>
+
+                                        <Text style={{
+                                            color: '#fff',
+                                            fontFamily: 'Avenir-Book',
+                                            fontSize: 35,
+                                            backgroundColor: 'transparent',
+                                            fontWeight: 'bold'
+                                        }}>-</Text>
+                                    </TouchableOpacity>}
+
                                 </View>)
                     })}
                 </ScrollView>
@@ -259,15 +269,18 @@ const style = StyleSheet.create({
 
 function mapStateToProps(state) {
     return {
-
+        items: state.shoppingCart.items
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        // updateBalances(balances) {
-        //     dispatch(updateBalances(balances))
-        // }
+        addToCart(item) {
+            dispatch(addToCart(item))
+        },
+        removeFromCart(item) {
+            dispatch(removeFromCart(item))
+        }
     }
 }
 

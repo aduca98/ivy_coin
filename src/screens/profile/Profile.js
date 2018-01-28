@@ -6,6 +6,7 @@ import {WindowDimensions, BaseContainer, Avatar, TaskOverview, Small, Styles, Ta
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import {connect} from 'react-redux';
 import {MapView} from 'expo';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 import variables from "../../assets/native-base-theme/variables/commonColor";
 import {addFullUser} from '../../modules/user';
@@ -34,7 +35,7 @@ class Profile extends React.Component {
         const {navigation} = this.props;
 
         return (<BaseContainer 
-                        backgroundColor={'red'}
+                        backgroundColor={'#56A0ED'}
                         noHeader={true} {...{ navigation }}>
                         
                         {/*<InAppNotification />*/}
@@ -68,11 +69,13 @@ class Profile extends React.Component {
                                             justifyContent: 'flex-start'
                                         }}>
                                         <Button onPress={() => navigation.navigate("DrawerOpen")} transparent>
-                                            <Image style={{
+                                            <MaterialCommunityIcons style={{
                                                 width: 35,
-                                                height: 25,
-                                                left: 15
-                                            }} source={require('../../assets/menu.png')} />
+                                                height: 35,
+                                                left: 15,
+                                                fontSize: 35,
+                                                color: "#fff"
+                                            }} name="menu" />
                                         </Button>
                                     </Left>
                                     
@@ -97,7 +100,7 @@ class Profile extends React.Component {
 
                             <View style={{
                                 height: WindowDimensions.height,
-                                
+                                top: 30,
                                 }}>
                                 <Image 
                                     style={{
@@ -108,14 +111,14 @@ class Profile extends React.Component {
                                         alignSelf: 'center',
                                         zIndex: 100,
                                     }} 
-                                    source={{uri: this.state.pictureUrl}} />
+                                    source={{uri: "https://api.adorable.io/avatars/285/andrew@gmail.com"}} />
 
                                 <KeyboardAwareScrollView style={{
                                     backgroundColor: '#ecf0f3',
                                     width: WindowDimensions.width - 30,
                                     alignSelf: 'center',
                                     borderRadius: 10,
-                                    paddingTop: 45
+                                    paddingTop: 60
                                     }}>
 
                                     <TextInput 
@@ -270,7 +273,7 @@ class Profile extends React.Component {
                                         borderRadius: 30,
                                         width: 150,
                                         alignSelf: 'center',
-                                        backgroundColor: "#f47c2b"
+                                        backgroundColor: "#ECBE00"
                                     }}>
                                         <Text style={{color: 'white', fontSize: 25, fontFamily: "Avenir"}}>
                                             Save

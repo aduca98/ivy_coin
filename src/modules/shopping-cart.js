@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 // Constants
 const EMPTY_SHOPPING = 'EMPTY_SHOPPING';
 const REMOVE_SHOPPING = 'REMOVE_SHOPPING';
@@ -5,7 +7,7 @@ const ADD_SHOPPING = 'ADD_SHOPPING';
 
 // Initial state
 const initialState = {
-	items: [{}, {}]
+	items: []
 };
 
 /**
@@ -27,6 +29,14 @@ export default function reducer(state = initialState, action = {}) {
 				items: [...state.items, action.payload.item],
 			}
 		case REMOVE_SHOPPING:
+			for(var i = 0; i < state.items; i++) {
+				if(_.isEqual(state.items[i], action.payload.item)) {
+					return {
+						...state,
+						items: [...this.state.items.pop(i)]
+					}
+				}
+			}
 			return {
 				...state,
 				items: [...state.items.pop(payload.index)]
@@ -45,8 +55,8 @@ export default function reducer(state = initialState, action = {}) {
 export function addToCart(item) {
 	return { type: ADD_SHOPPING, payload: {item} };
 }
-export function removeFromCart(index) {
-    return { type: REMOVE_SHOPPING, payload: {index} };
+export function removeFromCart(item) {
+    return { type: REMOVE_SHOPPING, payload: {item} };
 }
 export function emptyCart() {
     return { type: EMPTY_SHOPPING };
