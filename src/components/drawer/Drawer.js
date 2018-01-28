@@ -12,7 +12,6 @@ import Storage from '../../api/Storage';
 
 var images = [
     <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="home" />,
-    <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="shopping-basket" />,
     <MaterialCommunityIcons style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="coin" />,
     <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="user" />,
 ]

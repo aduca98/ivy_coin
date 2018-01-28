@@ -29,16 +29,17 @@ import ShoppingCart from '../../components/ShoppingCart';
 
 
 const Imagesd = [
-  { uri: "https://i.imgur.com/sNam9iJ.jpg" },
-  { uri: "https://i.imgur.com/N7rlQYt.jpg" },
-  { uri: "https://i.imgur.com/UDrH0wm.jpg" },
-  { uri: "https://i.imgur.com/Ka8kNST.jpg" },
+  require('../../assets/dinning-halls/images/Andrews.jpg'),
+  require('../../assets/dinning-halls/images/Ratty.jpg'),
+  require('../../assets/dinning-halls/images/BlueRoom.jpg'),
+  require('../../assets/dinning-halls/images/VDub.jpg'),
+  require('../../assets/dinning-halls/images/jos.jpg'),
 ]
 
 const { width, height } = Dimensions.get("window");
 
 const CARD_HEIGHT = height / 4.5;
-const CARD_WIDTH = CARD_HEIGHT - 30;
+const CARD_WIDTH = 200;
 
 export default class screens extends Component {
   state = {
@@ -97,11 +98,11 @@ export default class screens extends Component {
     },
   };
 
-    async navOrder() {
-        return this.props.navigation.navigate("Food_Display", { dinningHall: this.state.selectedIndex });
+    async navOrder(i) {
+        return this.props.navigation.navigate("Food_Display", { dinningHall: i });
     }
-    async navDeliver() {
-        return this.props.navigation.navigate("Deliveries_Display", { dinningHall: this.state.selectedIndex });
+    async navDeliver(i) {
+        return this.props.navigation.navigate("Deliveries_Display", { dinningHall: i });
     }
 
   componentWillMount() {
@@ -265,84 +266,97 @@ export default class screens extends Component {
         >
           {this.state.markers.map((marker, index) => (
             <View style={styles.card} key={index}>
-              <View style={{
+
+                <View style={[StyleSheet.absoluteFill, {
+                    opacity: 0.5,
+                    backgroundColor: '#000',
+                    zIndex: 100,
+                }]} />
+                <Image style={[StyleSheet.absoluteFill, {
+                    height: 200,
+                    width: 200,
+                }]} source={marker.image} /> 
+                <View style={[styles.textContent, {zIndex: 1000}]}>
+                    <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
+                    <Text numberOfLines={1} style={styles.cardDescription}>
+                        {marker.description}
+                    </Text>
+                </View>
+
+                <View style={{
+                        alignItems: 'center',
+                        flex: .5,
+                        zIndex: 1000
+                    }}>
+                    <TouchableOpacity
+                        onPress={() => this.navDeliver(index)}
+                        style={{
+                            width: 155,
+                            color: "#000",
+                            paddingTop: 10,
+                            paddingBottom: 10,
+                            borderRadius: 35,
                             alignItems: 'center',
-                            flex: .5,
+                            justifyContent: 'center',
+                            flexDirection: 'row',
                         }}>
-                        <TouchableOpacity
-                            onPress={() => this.navOrder()}
+                        <MaterialCommunityIcons
                             style={{
-                                width: 155,
-                                paddingTop: 10,
-                                paddingBottom: 10,
-                                flexDirection: 'row',
-                                borderRadius: 35,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}>
-                            <MaterialCommunityIcons
-                                style={{
-                                    fontSize: 25,
-                                    color: 'white',
-                                    marginRight: 10
-                                }}
-                                name="food" />
-                            <Text
-                                style={{
+                                fontSize: 25,
+                                color: 'white',
+                                marginRight: 10
+                            }}
+                            name="truck" />
+
+                        <Text
+                            style={{
                                 backgroundColor: 'transparent',
                                 fontSize: 17,
-                                color: '#FFF',
                                 fontWeight: 'bold',
+                                color: '#FFF',
                                 fontFamily: 'Avenir-Book'
-                                }}>
-                                Order
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{
-                            alignItems: 'center',
-                            flex: .5
-                        }}>
-                        <TouchableOpacity
-                            onPress={() => this.navDeliver()}
-                            style={{
-                                width: 155,
-                                color: "#000",
-                                paddingTop: 10,
-                                paddingBottom: 10,
-                                borderRadius: 35,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexDirection: 'row',
                             }}>
-                            <MaterialCommunityIcons
-                                style={{
-                                    fontSize: 25,
-                                    color: 'white',
-                                    marginRight: 10
-                                }}
-                                name="truck" />
-
-                            <Text
-                                style={{
-                                    backgroundColor: 'transparent',
-                                    fontSize: 17,
-                                    fontWeight: 'bold',
-                                    color: '#FFF',
-                                    fontFamily: 'Avenir-Book'
-                                }}>
-                                Deliver
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-              <View style={styles.textContent}>
-                <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-                <Text numberOfLines={1} style={styles.cardDescription}>
-                  {marker.description}
-                </Text>
-
-
-              </View>
+                            Deliver
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                
+                <View style={{
+                        alignItems: 'center',
+                        flex: .5,
+                        zIndex: 1000
+                    }}>
+                    <TouchableOpacity
+                        onPress={() => this.navOrder(index)}
+                        style={{
+                            width: 155,
+                            paddingTop: 10,
+                            paddingBottom: 10,
+                            flexDirection: 'row',
+                            borderRadius: 35,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}>
+                        <MaterialCommunityIcons
+                            style={{
+                                fontSize: 25,
+                                color: 'white',
+                                marginRight: 10
+                            }}
+                            name="food" />
+                        <Text
+                            style={{
+                            backgroundColor: 'transparent',
+                            fontSize: 17,
+                            color: '#FFF',
+                            fontWeight: 'bold',
+                            fontFamily: 'Avenir-Book'
+                            }}>
+                            Order
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                
             </View>
           ))}
         </Animated.ScrollView>
@@ -368,7 +382,9 @@ const styles = StyleSheet.create({
   card: {
     padding: 10,
     elevation: 2,
-    backgroundColor: "#56A0ED",
+    borderRadius: 10,
+    borderColor: "#ccc",
+    borderWidth: 2,
     marginHorizontal: 10,
     shadowColor: "#000",
     shadowRadius: 5,
@@ -406,16 +422,16 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: "rgba(130,4,150, 0.9)",
+    backgroundColor: "rgba(86,160,237, 0.9)",
   },
   ring: {
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: "rgba(130,4,150, 0.3)",
+    backgroundColor: "rgba(86,160,237, 0.3)",
     position: "absolute",
     borderWidth: 1,
-    borderColor: "rgba(130,4,150, 0.5)",
+    borderColor: "rgba(86,160,237, 0.5)",
   },
 });
 

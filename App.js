@@ -89,7 +89,6 @@ const AuthNavigation = StackNavigator({
 
 const DrawerNavigation = DrawerNavigator({
     Home: { screen: Home },
-    Checkout: { screen: Checkout },
     Manage_Crypto: { screen: ManageCrypto },
     Profile: { screen: Profile },
 

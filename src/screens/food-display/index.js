@@ -163,8 +163,8 @@ class FoodDisplay extends React.Component {
                         ref={'amount'}
                         placeholder="Search..."
                         keyboardType={"default"}
-                        value = {this.state.amount}
-                        onChangeText={(val) => this._onChangeAmount(val)}
+                        value = {this.state.search}
+                        onChangeText={(val) => this.setState({search: val})}
                     />
                 </View>
 
