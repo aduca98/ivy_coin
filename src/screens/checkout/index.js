@@ -9,7 +9,7 @@ import {BaseContainer, Circle, Styles, Images, WindowDimensions} from "../../com
 import variables from "../../assets/native-base-theme/variables/commonColor";
 import Loading from '../../components/Loading';
 import {connect} from 'react-redux';
-import {FontAwesome, EvilIcons} from '@expo/vector-icons';
+import {Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
 
 class Checkout extends React.Component {
 
@@ -20,6 +20,7 @@ class Checkout extends React.Component {
 
     constructor() {
         super();
+        this.removeFromCart = this.removeFromCart.bind(this);
     }
 
     async componentWillMount() {
@@ -64,14 +65,22 @@ class Checkout extends React.Component {
       });
     }
 
+    async removeFromCart(index) {
+      this.state.items.splice(index, 1);
+      this.setState({
+        items: this.state.items
+      });
+    }
+
     async fetchBalance() {
 
     }
 
     render() {
-
         const {navigation} = this.props;
 
+        const image_width = 95;
+        console.log(WindowDimensions.width-image_width);
         // if(this.state.loading) {
         //     return <Loading />
         // }
@@ -84,7 +93,7 @@ class Checkout extends React.Component {
                   barStyle="light-content"
               />*/
           <View style={{
-            backgroundColor: "#FFFFFF"
+            backgroundColor: "#efefef"
           }}>
             {/* Header */}
             <LinearGradient
@@ -99,7 +108,7 @@ class Checkout extends React.Component {
                   alignSelf: 'center',
             }}>
               <View style={{
-                backgroundColor: "red",
+                backgroundColor: "#3B5998",
                 height: 45,
                 padding:0,
                 left:0,
@@ -112,15 +121,18 @@ class Checkout extends React.Component {
                 }}>
                   {/* Nav button */}
                   <Left style={{
-                    flex: .3,
-                  }}>
-                    <Button onPress={() => navigation.navigate("DrawerOpen")} transparent>
-                      <Image style={{
-                        width: 35,
-                        height: 25,
-                        left: 15
-                      }} source={require('../../assets/menu.png')} />
-                    </Button>
+                          left: 15,
+                          flex: .3,
+                          justifyContent: 'flex-start'
+                      }}>
+                      <Button onPress={() => navigation.goBack(null)} transparent>
+                          <Ionicons style={{
+                              color: 'white',
+                              fontSize: 35,
+                              top: 0
+                          }} name='ios-arrow-round-back-outline' />
+
+                      </Button>
                   </Left>
 
                   {/*  Title */}
@@ -144,71 +156,96 @@ class Checkout extends React.Component {
               </View>
             </LinearGradient>
 
+            <View style={{
+              flexDirection: "row",
+              backgroundColor: "#fff",
+              height: 60
+            }}>
+              <Text style={{
+                flex: 1,
+                alignSelf: "center",
+                fontSize: 25,
+                fontWeight: "bold",
+                fontFamily: "Avenir-Book",
+                textAlign: "center",
+                textAlignVertical: "center"
+              }}>
+                Items: {this.state.items.length}
+              </Text>
+            </View>
+
             {/* Scroll! */}
             <ScrollView style={{
               marginBottom: 50
             }}>
               {this.state.items && this.state.items.map((item, i) => {
                 return(
-                  <View style= {{
-                    padding: 5,
-                    flexDirection: "row",
-                    borderBottomWidth: .5,
-                    borderColor: "#B1B1B1"
+                  <View
+                  animationIn={'fadeIn'}
+                  animationOut={'fadeOut'}
+                  style= {{
+                    backgroundColor: '#fff',
+                    width: .95 * WindowDimensions.width,
+                    alignSelf: 'center',
+                    marginTop: 20,
+                    padding: 13,
+                    borderRadius: 5,
+                    borderColor: "#ccc",
+                    justifyContent: 'center',
+                    flexDirection: 'row'
                   }} key={i}>
-                    <View style={{
-                      padding: 8
-                    }}>
-                      <Image style={{
-                          width: 95,
-                          height: 85,
-                          justifyContent:'center',
-                          alignItems:'center',
-                        }}
-                        source={{uri: item.image}}
-                        />
-                    </View>
+                    <Image style={{
+                        width: 60,
+                        height: 60,
+                        marginRight: 10,
+                        justifyContent:'center',
+                        alignItems:'center',
+                      }}
+                      source={{uri: item.image}}
+                      />
 
                     <View style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      padding: 2,
-                      flexGrow: 1
+                        width: 200,
+                        paddingHorizontal: 20,
+                        flexDirection: 'column'
                     }}>
-                      <Text
-                        adjustsFontSizeToFit={true}
-                        numberOfLines={1}
-                        style={{
-                          padding: 3,
-                          fontFamily: "Avenir-Book",
-                          fontSize: 20,
-                          width: 145
-                        }}
-                      >
-                        {item.name}
-                      </Text>
-
-                      {/* Button */}
-                      <TouchableOpacity
-                        onPress={() => alert("Pressed.")}
-                        style={{
-                          height: 40,
-                          alignSelf: 'flex-end',
-
-                          backgroundColor: 'brown',
-                          padding: 0,
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          borderRadius: 60
-                      }}>
                         <Text style={{
-                          padding: 10,
-                          color: '#fff',
-                          fontSize: 20,
-                          fontFamily: "Avenir-Book"
-                        }}>Remove</Text>
-                      </TouchableOpacity>
+                            color: "#000",
+                            fontSize: 16,
+                            fontWeight: "bold",
+                            fontFamily: "Avenir-Book",
+                            justifyContent: 'center',
+                            alignItems:'center'
+                        }}>{item.name} </Text>
+                        {
+                        <Text  ellipsizeMode='tail' numberOfLines={2}
+                        style={{
+                            fontSize: 10
+                        }}>{item.description} </Text>}
                     </View>
+
+                    <TouchableOpacity
+                        onPress={() => this.removeFromCart(i)}
+                        style={{
+                            width: 50,
+                            height: 50,
+                            alignSelf: 'center',
+
+                            backgroundColor: '#3B5998',
+                            padding: 0,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: 60
+                        }}>
+
+                        <Text style={{
+                            color: '#fff',
+                            fontFamily: 'Avenir-Book',
+                            fontSize: 25,
+                            backgroundColor: 'transparent',
+                            fontWeight: 'bold'
+                        }}>-</Text>
+                    </TouchableOpacity>
                   </View>)
               })}
               <View style={{
@@ -221,6 +258,7 @@ class Checkout extends React.Component {
                   placeholder="Notes for your order"
                   underlineColorAndroid="#FFFFFF"
                   style={{
+                    backgroundColor: "#fff",
                     textAlignVertical: "top",
                     height: 200,
                     margin: 18,
@@ -238,7 +276,7 @@ class Checkout extends React.Component {
                     height: 40,
                     alignSelf: 'center',
 
-                    backgroundColor: 'brown',
+                    backgroundColor: '#3B5998',
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 60
