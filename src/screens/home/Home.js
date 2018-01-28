@@ -54,7 +54,7 @@ class Home extends React.Component {
             selectedIndex: index
         })
     }
-    
+
     async navOrder() {
         return this.props.navigation.navigate("Food_Display", { dinningHall: this.state.selectedIndex });
     }
@@ -89,7 +89,7 @@ class Home extends React.Component {
             flex: 1,
             flexDirection: 'column'
           }}>
-            <StatusBar 
+            <StatusBar
                 barStyle="light-content" />
 
             <View style={{
@@ -120,7 +120,7 @@ class Home extends React.Component {
                             }} name="menu" />
                         </Button>
                     </Left>
-                    
+
                     <Text
                         style={{
                             backgroundColor: 'transparent',
@@ -148,15 +148,15 @@ class Home extends React.Component {
                 </View>
             </View>
 
-            <MapView 
-                ref={map => this.map = map}  
-                onRegionChange={this.onRegionChange}             
+            <MapView
+                ref={map => this.map = map}
+                onRegionChange={this.onRegionChange}
                 initialRegion={region}
                 style={{
                     flex: 1
                 }}>
                 { dinningHalls.dinningHalls.map(dh => {
-                    return (<MapView.Marker 
+                    return (<MapView.Marker
                                 title={dh.name}
                                 coordinate={{
                                     latitude: dh.location.lat,
@@ -191,7 +191,7 @@ class Home extends React.Component {
                             </MapView.Marker>);
                 })}
             </MapView>
-            <LinearGradient 
+            <LinearGradient
                 start={[0, 0]}
                 end={[1, 1]}
                 colors={['#fff', '#fff']}
@@ -206,35 +206,39 @@ class Home extends React.Component {
                         flex: 1,
                         alignItems: 'center',
                     }}
-                    arrowColor={"red"}
+                    arrowColor={"black"}
                     textStyle={{
-                        color: "red"
+                        color: "white",
+                        justifyContent:'center',
+                        marginLeft: -10,
+                        marginBottom: 40
                     }}
                     index={this.state.selectedIndex}
                     buttons={true}
                 />
-                  
+
                 <View style={{
                     flexDirection: 'row',
+                    backgroundColor:'#56A0ED',
                         alignItems: 'center',
                         paddingVertical: 10,
-                        height:50,
-                        top:20,
-                        paddingBottom: 70,
+                        height:20,
+                        top:0,
+                        paddingBottom: 40,
                     }}>
                     <View style={{
                             alignItems: 'center',
                             flex: .5,
                         }}>
-                        <TouchableOpacity 
+                        <TouchableOpacity
                             onPress={() => this.navOrder()}
-                            style={{ 
+                            style={{
                                 width: 155,
                                 paddingTop: 10,
                                 paddingBottom: 10,
                                 flexDirection: 'row',
                                 borderRadius: 35,
-                                alignItems: 'center', 
+                                alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
                             <MaterialCommunityIcons
@@ -260,14 +264,14 @@ class Home extends React.Component {
                             alignItems: 'center',
                             flex: .5
                         }}>
-                        <TouchableOpacity 
+                        <TouchableOpacity
                             onPress={() => this.navDeliver()}
-                            style={{ 
+                            style={{
                                 width: 155,
                                 paddingTop: 10,
                                 paddingBottom: 10,
                                 borderRadius: 35,
-                                alignItems: 'center', 
+                                alignItems: 'center',
                                 justifyContent: 'center',
                                 flexDirection: 'row',
                             }}>
@@ -278,7 +282,7 @@ class Home extends React.Component {
                                     marginRight: 10
                                 }}
                                 name="truck" />
-                            
+
                             <Text
                                 style={{
                                     backgroundColor: 'transparent',

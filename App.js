@@ -118,7 +118,7 @@ const AppNavigator = StackNavigator({
 }, {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "Food_Display"
+    initialRouteName: "FullNavigator"
 });
 
 export {AppNavigator}
