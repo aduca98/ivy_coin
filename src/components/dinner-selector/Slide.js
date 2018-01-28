@@ -21,15 +21,10 @@ export default class Slide extends Component {
         const b = this.props.dinninghall;
         const {style, textStyle, arrowColor, buttons} = this.props;
 
-        switch(b.dinninghall) {
-            default:
-                img = <Image style={{width: 100, height: 100}} source={require("../../assets/crypto/btc.png")} />
-                break;
-        }
         return (<View style={[styles.cryptoSlide, style]}>
-                    {img}
+                    <Image style={{borderRadius: 75, height: 150, width: 150}} source={b.photo} />
                     <Text style={[styles.text, textStyle]}> {b.name}</Text>
-                    <Text style={[styles.text, textStyle]}> {b.description}</Text>
+                    {/*<Text style={[styles.text, textStyle]}> {b.description}</Text>*/}
                     
                     {buttons && <View style={{
                         flexDirection: 'row',
@@ -66,7 +61,7 @@ export default class Slide extends Component {
                                     fontWeight: 'bold',
                                     fontFamily: 'Avenir-Book'
                                     }}>
-                                    Send
+                                    Order
                                 </Text>
                             </TouchableOpacity>
                         </View>
@@ -98,7 +93,7 @@ export default class Slide extends Component {
                                         color: '#fec315',
                                         fontFamily: 'Avenir-Book'
                                     }}>
-                                    Buy
+                                    Deliver
                                 </Text>
                             </TouchableOpacity>
                         </View>

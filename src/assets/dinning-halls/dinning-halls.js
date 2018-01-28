@@ -1,6 +1,6 @@
 export default {
-    dinningHalls: {
-        1: {
+    dinningHalls: [
+        {
             name: "Andrews",
             description: "This popular dinning hall contains classics such as pizzas and sandwiches as well as more exotic options such as pho and curry. ",
             photo: require('./images/Andrews.jpg'),
@@ -20,7 +20,6 @@ export default {
                     name: "Pepperoni Pizza",
                     description: "spicy pepperoni slices on our hand-made cheese pizza",
                     tags: ["Pepperoni Pizza", "lunch", "dinner"],
-                    photo: require('./images/whatever-file-name-is.png')
                 },
                 {
                     name: "Pepperoni & Meatball",
@@ -66,7 +65,7 @@ export default {
                 },
             ]
         },
-        2: {
+        {
             name: "VDub",
             description: "Located on the Pembroke campus, Verney-Woolley (better known as the “V-Dub”) is the smaller of Brown’s two all-you-care-to-eat dining halls. Its intimacy and unique character carry over to its work environment where our culinary team prepares grilled items in full view of the line. Dine with friends at our round tables or booth seating, in the sunny windows of the dining room, or outside in the inner courtyard. Looking to grab a quiet bite? The V-Dub has counter seating perfect for solo diners.",
             photo: require('./images/VDub.jpg'),
@@ -120,7 +119,7 @@ export default {
                 }
             ]
         },
-        3: {
+        {
             name: "Blue Room",
             description: "Conveniently located in the Stephen Robert Campus Center, the Blue Room Café features sustainable fair-trade coffee, delicious breakfast sandwiches and a fantastic array of freshly baked goodies and artisan pastries. The Blue Room also boasts an extensive, customizable deli with local artisan bread, high-quality meats, and plenty of vegetarian options. Locally prepared soups, sushi, and a wide selection of fresh snacks and beverages are available for folks on the go. The Blue Room also partners with local restaurants serving authentic ethnic cuisine.",
             photo: require('./images/BlueRoom.jpg'),
@@ -161,8 +160,8 @@ export default {
                     photo: require('./images/VegieDhansak.jpg')
                 },
             ]
-        }
-        4: {
+        },
+        {
             name: "Ratty",
             description: "Choose from a variety of quality entrees and sides crafted from scratch-made recipes, locally grown produce, quality meats from our in-house Butcher Shop, and Pinterest-worthy desserts from our in-house Bakeshop.",
             photo: require('./images/Ratty.jpg'),
@@ -200,13 +199,11 @@ export default {
                     name: "Bacon",
                     description: "delicious cured and smoked bacon",
                     tags: ["Bacon","breakfast"],
-                    photo: require('./images/')
                 },
                 {
                     name: "Whole Wheat Penne Pasta",
                     description: "cylindrical-shaped pasta",
                     tags: ["Whole Wheat Penne Pasta", "lunch", "dinner", "vegetarian"],
-                    photo: require('./images/whatever-file-name-is.png')
                 },
                 {
                     name: "Red Potato Frittata",
@@ -270,7 +267,7 @@ export default {
                 }
             ]
         },
-        5: {
+        {
             name: "Jo's",
             description: "Customize your meal with our make your own chopped salads and quesadillas; or choose from our popular grilled selection of burgers, chicken sandwiches, french fries, and onion rings",
             photo: require('./images/jos.jpg'),
@@ -324,53 +321,53 @@ export default {
                 }
             ]
         },
-        6: {
-            name: "Ivy Room",
-            description: "The Ivy Room features a daily selection of hot entrees, made-to-order sandwiches and salads, homemade soups, and more.",
-            photo: require('./images/Ratty.jpg'),
-            location: {
-                address: "Lower Level, 144 Thayer St, Providence, RI 02906",
-                lat: 41.825218,
-                long: -71.401232
-            },
-            food: [
-                {
-                    name: "Veggie Tacos",
-                    description: "don't forget to add a note to this custom order!",
-                    tags: ["Veggie Tacos", "dinner", "vegetarian"],
-                    photo: require('./images/beggie-tacos.jpg')
-                },
-                {
-                    name: "Avocado Toast",
-                    description: "don't forget to add a note to this custom order!",
-                    tags: ["Avocado Toast","lunch", "dinner", "vegetarian"],
-                    photo: require('./images/avocado-toast.jpg')
-                },
-                {
-                    name: "Smoothie",
-                    description: "don't forget to add a note to this custom order!",
-                    tags: ["Smoothie","lunch", "dinner", "gluten-free", "vegetarian"],
-                    photo: require('./images/smoothies.jpg')
-                },
-                {
-                    name: "Mashed Potatoes", 
-                    description: "whipped to creamy perfection",
-                    tags: ["Mashed Potatoes", "lunch", "dinner", "vegetarian", "gluten-free"],
-                    photo: require('./images/mashed-potatoes.jpg')
-                },
-                {
-                    name: "Chicken and Dumplings",
-                    description: "a creamy mix of two faculty favorites",
-                    tags: ["Chicken and Dumplings", "lunch"],
-                    photo: require('./images/chicken-dumplings.jpg')
-                },
-                {
-                    name: "Custom Falafel Sandwich",
-                    description: "don't forget to add a note to this order!",
-                    tags: ["Custom Falafel Sandwich", "dinner", "vegetarian"],
-                    photo: require('./images/falafel-sandwich.jpg')
-                }
-            ]
-        }
-    }
+        // {
+        //     name: "Ivy Room",
+        //     description: "The Ivy Room features a daily selection of hot entrees, made-to-order sandwiches and salads, homemade soups, and more.",
+        //     photo: require('./images/Ratty.jpg'),
+        //     location: {
+        //         address: "Lower Level, 144 Thayer St, Providence, RI 02906",
+        //         lat: 41.825218,
+        //         long: -71.401232
+        //     },
+        //     food: [
+        //         {
+        //             name: "Veggie Tacos",
+        //             description: "don't forget to add a note to this custom order!",
+        //             tags: ["Veggie Tacos", "dinner", "vegetarian"],
+        //             photo: require('./images/veggie-tacos.jpg')
+        //         },
+        //         {
+        //             name: "Avocado Toast",
+        //             description: "don't forget to add a note to this custom order!",
+        //             tags: ["Avocado Toast","lunch", "dinner", "vegetarian"],
+        //             photo: require('./images/avocado-toast.jpg')
+        //         },
+        //         {
+        //             name: "Smoothie",
+        //             description: "don't forget to add a note to this custom order!",
+        //             tags: ["Smoothie","lunch", "dinner", "gluten-free", "vegetarian"],
+        //             photo: require('./images/smoothies.jpg')
+        //         },
+        //         {
+        //             name: "Mashed Potatoes", 
+        //             description: "whipped to creamy perfection",
+        //             tags: ["Mashed Potatoes", "lunch", "dinner", "vegetarian", "gluten-free"],
+        //             photo: require('./images/mashed-potatoes.jpg')
+        //         },
+        //         {
+        //             name: "Chicken and Dumplings",
+        //             description: "a creamy mix of two faculty favorites",
+        //             tags: ["Chicken and Dumplings", "lunch"],
+        //             photo: require('./images/chicken-dumplings.jpg')
+        //         },
+        //         {
+        //             name: "Custom Falafel Sandwich",
+        //             description: "don't forget to add a note to this order!",
+        //             tags: ["Custom Falafel Sandwich", "dinner", "vegetarian"],
+        //             photo: require('./images/falafel-sandwich.jpg')
+        //         }
+        //     ]
+        // }
+    ]
 }
