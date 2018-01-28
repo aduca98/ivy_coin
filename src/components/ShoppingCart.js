@@ -26,7 +26,7 @@ class ShoppingCart extends Component {
                  {/*this.props.items.length > 0*/}
                 {this.props.items && this.props.items.length > 0 && (
                     <View style={{
-                        backgroundColor: 'red',
+                        backgroundColor: 'brown',
                         width: 25,
                         height: 25,
                         top: 15,

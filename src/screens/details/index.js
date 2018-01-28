@@ -27,13 +27,25 @@ class FoodDisplay extends React.Component {
     }
 
     async componentWillMount() {
-        
-        const index = this.props.navigation.state.params.dinningHall;
-        
+                
         return this.setState({
-            name: dinningHalls.dinningHalls[index].name,
-            picture: dinningHalls.dinningHalls[index].photo,
-            food: dinningHalls.dinningHalls[index].food,
+            name: "Andrew Duca",
+            phone: "",
+            facebook: "",
+            food: [
+                {
+                    name: "Cheese Pizza",
+                    description: "fresh dough from our bakeshop, house-made sauce, and a blend of cheeses, hearth-baked for a perfect slice",
+                    tags: ["Cheese Pizza", "lunch", "dinner", "vegetarian"],
+                    photo: require('../../assets/dinning-halls/images/cheesePizza.jpg')
+                },
+                {
+                    name: "Pepperoni & Meatball",
+                    description: "classic peperoni with house made meatballs",
+                    tags: ["Pepperoni & Meatball", "dinner"],
+                    photo: require('../../assets/dinning-halls/images/pepPizza.jpg')
+                },
+            ]
         });
         
 
@@ -87,7 +99,7 @@ class FoodDisplay extends React.Component {
                 {/* Header */}
                 <View style={{
                     padding:0,
-                    height: 300,
+                    height: 250,
                     left:0,
                     width: WindowDimensions.width + 10}}>
 
@@ -95,13 +107,13 @@ class FoodDisplay extends React.Component {
                     <Image style = {[StyleSheet.absoluteFill, {
                             top:0,
                             justifyContent: 'center',
-                            height: 300,
+                            height: 250,
                             zIndex: -100,
                             position: 'absolute',
                             width: WindowDimensions.width,
-                        }]} source = {this.state.picture}>
+                        }]} source = {require('../../assets/dinning-halls/images/Andrews.jpg')}>
                     </Image>
-                    
+
                     <View style={{
                             flex: .25,
                             flexDirection: 'row'
@@ -109,7 +121,7 @@ class FoodDisplay extends React.Component {
                         <Left style={{
                                 left: 0,
                                 flex: .3,
-                                top: 15,
+                                top: 35,
                                 justifyContent: 'flex-start'
                             }}>
                             <Button onPress={() => navigation.goBack(null)} transparent>
@@ -135,7 +147,7 @@ class FoodDisplay extends React.Component {
                                 justifyContent: 'flex-start',
                                 fontFamily: 'Avenir-Book'
                             }}>
-                            {this.state.name}
+                            Details
                         </Text>
 
                         <View style={{
@@ -145,42 +157,74 @@ class FoodDisplay extends React.Component {
                             top: -5,
                             alignItems: 'right',
                             justifyContent: 'flex-end'}}>
-                            <ShoppingCart navigation={this.props.navigation} />
                         </View>
 
                     </View>
+                    <View style={{
+                            alignItems: 'center',
+                            width: WindowDimensions.width - 100,
+                            flexDirection: 'row',
+                            alignSelf: 'center'
+                        }}>
+                        <Image style={{
+                            width: 80,
+                            height: 80,
+                            borderColor: "#ccc",
+                            borderWidth: 2,
+                            borderRadius: 40,
+                            top: 50,
+                        }} source={{uri: "http://www.math.uni-frankfurt.de/~person/_4170854.jpg"}} />
+                        <View style={{
+                            top: 60,
+                            marginLeft: 20,
+                            flexDirection: 'column'
+                        }}>
+                            <Text style={{
+                                backgroundColor: 'transparent',
+                                fontSize: 20,
+                                fontWeight: "bold",
+                                color: 'white'
+                            }}> Andrew Duca </Text>
+                            <TouchableOpacity>
+                                <Text style={{
+                                    backgroundColor: 'transparent',
+                                    top: 5,
+                                    color: '#ccc'
+                                }}> (858)-999-7892 </Text>
+                            </TouchableOpacity>
 
-                    <TextInput
-                        style={[style.input, {
-                            position: 'absolute',
-                            alignSelf: 'center',
-                            color: '#000',
-                            textAlign: 'left',
-                            fontSize: 18,
-                            paddingLeft: 40,
-                            top: 200,
-                            paddingTop: 10,
-                            paddingBottom: 10,
-                            borderBottomColor: 'transparent',
-                            height: 50,
-                            width: 330,
-                            justifyContent: 'center',
-                            backgroundColor: '#fff',
-                            borderRadius: 30,
-                        }]}
-                        returnKeyLabel='Done'
-                        returnKeyType='done'
-                        placeholderTextColor={"#888"}
-                        tintColor={"#000"}
-                        ref={'amount'}
-                        placeholder="Search..."
-                        keyboardType={"default"}
-                        value = {this.state.amount}
-                        onChangeText={(val) => this._onChangeAmount(val)}
-                    />
+                            <TouchableOpacity style={{
+                                width: 150,
+                                height: 40,
+                                marginTop: 15,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                paddingVertical: 5,
+                                backgroundColor: '#3B5998',
+                                borderRadius: 50,
+                            }}>
+                                <Text style={{
+                                    backgroundColor: 'transparent',
+                                    color: 'white',
+                                    fontFamily: 'Avenir',
+                                    fontWeight: "bold",
+                                    fontSize: 20
+                                }}> Facebook </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
             
                 <ScrollView>
+                    <Text style={{
+                        marginLeft: 15,
+                        fontSize: 20,
+                        top: 10,
+                        paddingVertical: 20,
+                        fontWeight: 'bold',
+                    }}>
+                        Dinning Hall: Andrew's Commons
+                    </Text>
                     {this.state.food && this.state.food.map((f, i) => {
                         return(f.photo && <View style= {{
                                     backgroundColor: '#fff',
@@ -237,10 +281,10 @@ class FoodDisplay extends React.Component {
                                         <Text style={{
                                             color: '#fff',
                                             fontFamily: 'Avenir-Book',
-                                            fontSize: 35,
+                                            fontSize: 25,
                                             backgroundColor: 'transparent',
                                             fontWeight: 'bold'
-                                        }}>+</Text>
+                                        }}>1x</Text>
                                     </TouchableOpacity>
                                 </View>)
                     })}

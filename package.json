@@ -54,6 +54,7 @@
     "react-navigation": "1.0.0-beta.19",
     "react-redux": "^5.0.6",
     "redux-logger": "^3.0.6",
+    "stellar-sdk": "^0.8.0",
     "text-ellipsis": "^1.0.3",
     "tipsi-stripe": "^4.6.1"
   }

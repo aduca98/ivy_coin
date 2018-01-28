@@ -21,6 +21,7 @@ import AddCard from './src/screens/add-card';
 import FoodDisplay from './src/screens/food-display';
 import DeliveriesDisplay from './src/screens/deliveries-display';
 import Checkout from './src/screens/checkout';
+import Details from './src/screens/details';
 
 import getTheme from "./src/assets/native-base-theme/components";
 import variables from "./src/assets/native-base-theme/variables/commonColor";
@@ -117,11 +118,12 @@ const AppNavigator = StackNavigator({
     // Modals
     Food_Display: { screen: FoodDisplay },
     Deliveries_Display: { screen: DeliveriesDisplay },
-    Checkout: { screen: Checkout }
+    Checkout: { screen: Checkout },
+    Details: { screen: Details }
 }, {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "Food_Display"
+    initialRouteName: "FullNavigator"
 });
 
 export {AppNavigator}

@@ -80,7 +80,7 @@ class DeliveriesDisplay extends React.Component {
                 <LinearGradient 
                     start={[0, 0]}
                     end={[1, 1]}
-                    colors={['#fc5959', '#b51818']}
+                    colors={['#56A0ED', '#0C48B2']}
                     style={{
                         bottom: 0,
                         height: 200,
@@ -158,7 +158,7 @@ class DeliveriesDisplay extends React.Component {
                                     paddingLeft: 40,
                                     paddingTop: 5,
                                     borderBottomColor: 'transparent',
-                                    height: 60,
+                                    height: 50,
                                     width: 300,
                                     justifyContent: 'center',
                                     backgroundColor: '#fff',
@@ -186,39 +186,70 @@ class DeliveriesDisplay extends React.Component {
                                     width: WindowDimensions.width - 30,
                                     alignSelf: 'center',
                                     marginTop: 20,
-                                    padding: 20,
+                                    paddingHorizontal: 20,
                                     borderRadius: 15,
                                     borderColor: "#ccc",
+                                    height: 200,
                                     justifyContent: 'center',
-                                    flexDirection: 'row'
+                                    flexDirection: 'column'
                                 }} key={i}>
-                                    <Image style={{
-                                        width: 50,
-                                        height: 50,
-                                        borderRadius: 25,
-                                        justifyContent: 'center'
-                                    }} source={{uri: f.image}} />
                                     <View style={{
-                                        width: 150,
-                                        flexDirection: 'column'
-                                    }}>
-                                        <Text style={{
-                                            color: "#000",
-                                            fontSize: 17,
-                                            fontWeight: "bold",
-                                            fontFamily: "Avenir"
-                                        }}> {f.name} </Text>
-                                        <Text style={{
-                                        }}> {"Phone Number: " + f.phone} </Text>
+                                        flexDirection: 'row',
+                                        top: -10
+                                        }}>
+                                        <Image style={{
+                                            width: 50,
+                                            height: 50,
+                                            borderRadius: 25,
+                                            justifyContent: 'center'
+                                        }} source={{uri: f.image}} />
+                                        
+                                        <View style={{
+                                                width: 300,
+                                                marginLeft: 15,
+                                                flexDirection: 'column'
+                                            }}>
+                                            <Text style={{
+                                                color: "#000",
+                                                fontSize: 17,
+                                                fontWeight: "bold",
+                                                fontFamily: "Avenir"
+                                            }}> {f.name} </Text>
+                                            <Text style={{
+                                            }}> {"Phone Number: " + f.phone} </Text>
+                                        </View>
                                     </View>
-                                    <TouchableOpacity 
-                                        onPress={() => alert("Pressed.")}
+                                    <View style={{
+                                        flexDirection: 'row',
+                                        top:20
+                                    }}>
+                                        <TouchableOpacity 
+                                        onPress={() => this.props.navigation.navigate("Details")}
                                         style={{
-                                            width: 100,
+                                            width: 70,
                                             backgroundColor: 'brown',
                                             padding: 15,
                                             alignItems: 'center',
-                                            borderRadius: 15
+                                            borderRadius: 50,
+                                            flex: 0.4
+                                        }}>
+
+                                        <Text style={{
+                                            color: '#fff', 
+                                            fontFamily: 'Avenir-Book',
+                                            fontSize: 20,
+                                        }}>Details</Text>
+                                    </TouchableOpacity>
+                                    <View style={{flex: .2}} />
+                                    <TouchableOpacity 
+                                        onPress={() => alert("Thank you for accepting! Click Details to learn about what to get.")}
+                                        style={{
+                                            width: 100,
+                                            flex: 0.4,
+                                            backgroundColor: 'brown',
+                                            padding: 15,
+                                            alignItems: 'center',
+                                            borderRadius: 50
                                         }}>
 
                                         <Text style={{
@@ -227,6 +258,8 @@ class DeliveriesDisplay extends React.Component {
                                             fontSize: 20,
                                         }}>Accept</Text>
                                     </TouchableOpacity>
+                                    </View>
+                                    
                                 </View>)
                     })}
                 </ScrollView>
