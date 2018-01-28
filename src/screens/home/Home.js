@@ -55,13 +55,14 @@ export default class screens extends Component {
       },
       {
         coordinate: {
-          latitude: 41.825218,
-          longitude: -71.401232,
+          latitude: 41.829802,
+          longitude: -71.401696,
         },
-        title: "Ratty",
-        description: "Choose from a variety of quality entrees and sides crafted from scratch-made recipes, locally grown produce, quality meats from our in-house Butcher Shop, and Pinterest-worthy desserts from our in-house Bakeshop.",
-        image: Imagesd[1],
+        title: "VDub",
+        description: "Located on the Pembroke campus, Verney-Woolley (better known as the “V-Dub”) is the smaller of Brown’s two all-you-care-to-eat dining halls. Its intimacy and unique character carry over to its work environment where our culinary team prepares grilled items in full view of the line. Dine with friends at our round tables or booth seating, in the sunny windows of the dining room, or outside in the inner courtyard. Looking to grab a quiet bite? The V-Dub has counter seating perfect for solo diners.",
+        image: Imagesd[3],
       },
+
       {
         coordinate: {
           latitude: 41.826754,
@@ -71,14 +72,14 @@ export default class screens extends Component {
         description: "Conveniently located in the Stephen Robert Campus Center, the Blue Room Café features sustainable fair-trade coffee, delicious breakfast sandwiches and a fantastic array of freshly baked goodies and artisan pastries. The Blue Room also boasts an extensive, customizable deli with local artisan bread, high-quality meats, and plenty of vegetarian options. Locally prepared soups, sushi, and a wide selection of fresh snacks and beverages are available for folks on the go. The Blue Room also partners with local restaurants serving authentic ethnic cuisine.",
         image: Imagesd[2],
       },
-      {
+    {
         coordinate: {
-          latitude: 41.829802,
-          longitude: -71.401696,
+          latitude: 41.825218,
+          longitude: -71.401232,
         },
-        title: "VDub",
-        description: "Located on the Pembroke campus, Verney-Woolley (better known as the “V-Dub”) is the smaller of Brown’s two all-you-care-to-eat dining halls. Its intimacy and unique character carry over to its work environment where our culinary team prepares grilled items in full view of the line. Dine with friends at our round tables or booth seating, in the sunny windows of the dining room, or outside in the inner courtyard. Looking to grab a quiet bite? The V-Dub has counter seating perfect for solo diners.",
-        image: Imagesd[3],
+        title: "Ratty",
+        description: "Choose from a variety of quality entrees and sides crafted from scratch-made recipes, locally grown produce, quality meats from our in-house Butcher Shop, and Pinterest-worthy desserts from our in-house Bakeshop.",
+        image: Imagesd[1],
       },
       {
         coordinate: {
