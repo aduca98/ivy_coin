@@ -16,6 +16,77 @@ import DinnerSlider from '../../components/dinner-selector/DinnerSlider';
 import ShoppingCart from '../../components/ShoppingCart';
 import dinningHalls from '../../assets/dinning-halls/dinning-halls';
 
+const { width, height } =  WindowDimensions.height;
+
+const CARD_HEIGHT = height / 4;
+const CARD_WIDTH = CARD_HEIGHT - 50;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  scrollView: {
+    position: "absolute",
+    bottom: 30,
+    left: 0,
+    right: 0,
+    paddingVertical: 10,
+  },
+  endPadding: {
+    paddingRight: width - CARD_WIDTH,
+  },
+  card: {
+    padding: 10,
+    elevation: 2,
+    backgroundColor: "#FFF",
+    marginHorizontal: 10,
+    shadowColor: "#000",
+    shadowRadius: 5,
+    shadowOpacity: 0.3,
+    shadowOffset: { x: 2, y: -2 },
+    height: CARD_HEIGHT,
+    width: CARD_WIDTH,
+    overflow: "hidden",
+  },
+  cardImage: {
+    flex: 3,
+    width: "100%",
+    height: "100%",
+    alignSelf: "center",
+  },
+  textContent: {
+    flex: 1,
+  },
+  cardtitle: {
+    fontSize: 12,
+    marginTop: 5,
+    fontWeight: "bold",
+  },
+  cardDescription: {
+    fontSize: 12,
+    color: "#444",
+  },
+  markerWrap: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  marker: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "rgba(130,4,150, 0.9)",
+  },
+  ring: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: "rgba(130,4,150, 0.3)",
+    position: "absolute",
+    borderWidth: 1,
+    borderColor: "rgba(130,4,150, 0.5)",
+  },
+});
+
 class Home extends React.Component {
 
     state = {
@@ -70,6 +141,7 @@ class Home extends React.Component {
                 longitudeDelta: 0.01,
             })
         });
+        this.animation = new Animated.Value(0);
     }
     onRegionChange(region) {
         return this.setState({
@@ -137,6 +209,7 @@ class Home extends React.Component {
                         Home
                     </Text>
                     <View style={{
+
                         right: 0,
                         flex: .3,
                         top: 50,
@@ -157,6 +230,7 @@ class Home extends React.Component {
                 }}>
                 { dinningHalls.dinningHalls.map(dh => {
                     return (<MapView.Marker
+                                key = {dh.name}
                                 title={dh.name}
                                 coordinate={{
                                     latitude: dh.location.lat,
@@ -191,26 +265,20 @@ class Home extends React.Component {
                             </MapView.Marker>);
                 })}
             </MapView>
-            <LinearGradient
-                start={[0, 0]}
-                end={[1, 1]}
-                colors={['#fff', '#fff']}
-                style={{
-                    height: 300,
-                }}>
+
                 <DinnerSlider
                     activeIndex={this.activeIndex}
                     dinninghalls={dinningHalls.dinningHalls}
                     style={{
-                        // backgroundColor: "#fff",
+                        backgroundColor: "transparent",
                         flex: 1,
                         alignItems: 'center',
                     }}
                     arrowColor={"black"}
                     textStyle={{
-                        color: "white",
                         justifyContent:'center',
                         marginLeft: -10,
+                        color: 'white',
                         marginBottom: 40
                     }}
                     index={this.state.selectedIndex}
@@ -218,8 +286,8 @@ class Home extends React.Component {
                 />
 
                 <View style={{
-                    flexDirection: 'row',
-                    backgroundColor:'#56A0ED',
+                        flexDirection: 'row',
+                        backgroundColor: 'transparent',//'#56A0ED',
                         alignItems: 'center',
                         paddingVertical: 10,
                         height:20,
@@ -296,7 +364,6 @@ class Home extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </LinearGradient>
           </View>);
     }
 }
