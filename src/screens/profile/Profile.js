@@ -52,7 +52,7 @@ class Profile extends React.Component {
                                 alignItems: 'center' }]}>
                                 
                             <View style={{
-                                height: 70,
+                                height: 20,
                                 top: 0,
                                 left:0,
                                 width: WindowDimensions.width }}>
@@ -102,8 +102,8 @@ class Profile extends React.Component {
                                 <Image 
                                     style={{
                                         borderRadius: 50, 
-                                        height: 100, 
-                                        width: 100,
+                                        height: 90, 
+                                        width: 90,
                                         top: 50,
                                         alignSelf: 'center',
                                         zIndex: 100,
@@ -115,7 +115,7 @@ class Profile extends React.Component {
                                     width: WindowDimensions.width - 30,
                                     alignSelf: 'center',
                                     borderRadius: 10,
-                                    paddingTop: 55
+                                    paddingTop: 45
                                     }}>
 
                                     <TextInput 
