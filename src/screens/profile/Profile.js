@@ -79,12 +79,12 @@ class Profile extends React.Component {
                                     <Text
                                         style={{
                                             backgroundColor: 'transparent',
-                                            fontSize: 25,
+                                            fontSize: 30,
                                             color: '#fff',
                                             flex: .4,
-                                            height: 50,
+                                            height: 40,
                                             textAlign: 'center',
-                                            top: 35,
+                                            top: 22,
                                             justifyContent: 'flex-start',
                                             fontFamily: 'Avenir-Book'
                                         }}>
@@ -102,8 +102,8 @@ class Profile extends React.Component {
                                 <Image 
                                     style={{
                                         borderRadius: 50, 
-                                        height: 90, 
-                                        width: 90,
+                                        height: 100, 
+                                        width: 100,
                                         top: 50,
                                         alignSelf: 'center',
                                         zIndex: 100,
@@ -229,12 +229,11 @@ class Profile extends React.Component {
                                             fontSize: 18,
                                             paddingLeft: 40,
                                             paddingTop: 5,
+                                            borderBottomColor: 'transparent',
                                             height: 60,
                                             width: 300,
                                             justifyContent: 'center',
-                                            backgroundColor: '#efefef',
-                                            borderColor: "#ccc",
-                                            borderWidth: 1,
+                                            backgroundColor: '#fff',
                                             borderRadius: 30,
                                             shadowColor: '#ccc',
                                             shadowOffset: {
@@ -244,7 +243,6 @@ class Profile extends React.Component {
                                             shadowRadius: 3,
                                             shadowOpacity: 0.7
                                         }}
-                                        editable={false}
                                         returnKeyLabel='Done' 
                                         returnKeyType='done'
                                         placeholderTextColor={"#888"}
@@ -252,6 +250,7 @@ class Profile extends React.Component {
                                         ref={'phone'} 
                                         placeholder="Phone"
                                         value = {this.state.phoneNumber}
+                                        onChangeText={(val) => this.setState({phoneNumber: val})}
                                     />
 
                                     <TouchableOpacity style={{
