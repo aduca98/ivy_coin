@@ -37,8 +37,8 @@ const Imagesd = [
 
 const { width, height } = Dimensions.get("window");
 
-const CARD_HEIGHT = height / 4;
-const CARD_WIDTH = CARD_HEIGHT - 50;
+const CARD_HEIGHT = height / 4.5;
+const CARD_WIDTH = CARD_HEIGHT - 30;
 
 export default class screens extends Component {
   state = {
@@ -283,7 +283,7 @@ export default class screens extends Component {
                             <MaterialCommunityIcons
                                 style={{
                                     fontSize: 25,
-                                    color: 'black',
+                                    color: 'white',
                                     marginRight: 10
                                 }}
                                 name="food" />
@@ -291,7 +291,7 @@ export default class screens extends Component {
                                 style={{
                                 backgroundColor: 'transparent',
                                 fontSize: 17,
-                                color: '#000',
+                                color: '#FFF',
                                 fontWeight: 'bold',
                                 fontFamily: 'Avenir-Book'
                                 }}>
@@ -307,6 +307,7 @@ export default class screens extends Component {
                             onPress={() => this.navDeliver()}
                             style={{
                                 width: 155,
+                                color: "#000",
                                 paddingTop: 10,
                                 paddingBottom: 10,
                                 borderRadius: 35,
@@ -317,7 +318,7 @@ export default class screens extends Component {
                             <MaterialCommunityIcons
                                 style={{
                                     fontSize: 25,
-                                    color: 'black',
+                                    color: 'white',
                                     marginRight: 10
                                 }}
                                 name="truck" />
@@ -327,7 +328,7 @@ export default class screens extends Component {
                                     backgroundColor: 'transparent',
                                     fontSize: 17,
                                     fontWeight: 'bold',
-                                    color: '#000',
+                                    color: '#FFF',
                                     fontFamily: 'Avenir-Book'
                                 }}>
                                 Deliver
@@ -367,7 +368,7 @@ const styles = StyleSheet.create({
   card: {
     padding: 10,
     elevation: 2,
-    backgroundColor: "#FFF",
+    backgroundColor: "#56A0ED",
     marginHorizontal: 10,
     shadowColor: "#000",
     shadowRadius: 5,
@@ -387,13 +388,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardtitle: {
-    fontSize: 12,
+    fontSize: 20,
+    alignSelf: "center",
     marginTop: 5,
     fontWeight: "bold",
+    color: "#FFF",
   },
   cardDescription: {
     fontSize: 12,
-    color: "#444",
+    color: "#FFF",
   },
   markerWrap: {
     alignItems: "center",
