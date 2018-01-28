@@ -14,59 +14,89 @@ import {FontAwesome, EvilIcons} from '@expo/vector-icons';
 class Checkout extends React.Component {
 
     state = {
-        
+        items: []
     };
 
     constructor() {
         super();
     }
-    
+
     async componentWillMount() {
-        
+      this.setState({
+          items: [{
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }, {
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }, {
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }, {
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }, {
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }, {
+              name: "Cheeseburger",
+              description: "burger",
+              image: "http://healthsupple.org/images/burger.jpg"
+          }]
+      });
     }
 
     async fetchBalance() {
 
     }
-    
+
     render() {
-      
+
         const {navigation} = this.props;
-        
+
         // if(this.state.loading) {
         //     return <Loading />
         // }
         return (
-            <BaseContainer 
-                backgroundColor={'transparent'}
-                noHeader={true} {...{ navigation }}>
-                
-                <StatusBar
-                    barStyle="light-content"
-                />
+          /*
+          <BaseContainer
+              backgroundColor={'#efefef'}
+              noHeader={true} {...{ navigation }}>
+              <StatusBar
+                  barStyle="light-content"
+              />*/
+            <View>
+              // Header
 
-                <Text>
-                    Checkout
-                </Text>
 
-                
-            </BaseContainer>);
+              
+
+
+
+            </View>
+
+            /*</BaseContainer>*/);
     }
 }
 function cacheImages(images) {
-    return images.map(image => 
+    return images.map(image =>
     Expo.Asset.fromModule(image).downloadAsync());
 }
 
 const style = StyleSheet.create({
-    
+
 });
 
-function mapStateToProps(state) { 
+function mapStateToProps(state) {
     return {
-        
-    }; 
-} 
+
+    };
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -76,7 +106,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect( 
-    mapStateToProps, 
-    mapDispatchToProps 
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
 )(Checkout);

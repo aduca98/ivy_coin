@@ -12,7 +12,7 @@ import {
 import {H1, Button, Left, Header} from "native-base";
 import Slide from './Slide';
 
-export default class CryptoSlider extends Component {
+export default class DinnerSlider extends Component {
     
     constructor() {
         super();
@@ -22,7 +22,7 @@ export default class CryptoSlider extends Component {
         const {buttons, style, arrowColor, textStyle, dinninghalls} = this.props;
         return(
             <Swiper 
-                onIndexChanged={(index) => console.log(index)}
+                onIndexChanged={(index) => this.props.activeIndex(index)}
                 showsButtons={true}
                 showsPagination={false}
                 prevButton={<Entypo style={{fontSize: 45, color: arrowColor}} name="chevron-thin-left"/>}
@@ -37,7 +37,7 @@ export default class CryptoSlider extends Component {
     }
 }
 
-CryptoSlider.propTypes = {
+DinnerSlider.propTypes = {
     dinninghalls: PropTypes.array.isRequired,
     backgroundColor: PropTypes.string,
 }
