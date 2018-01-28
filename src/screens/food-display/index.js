@@ -163,15 +163,15 @@ class FoodDisplay extends React.Component {
                         height: 160,
                         width: WindowDimensions.width,
                         marginTop:-15,
-                        marginBottom: 10,
+                        marginBottom: 20,
                         alignItems: 'center',
                         justifyContent: 'center',
                     }}>
                         <Image style = {{
                                 justifyContent: 'center',
-                                borderRadius:80,
-                                height: 160,
-                                width: 160,
+                                borderRadius:20,
+                                height: 170,
+                                width: 320,
                             }} source = {{uri:this.state.picture}}>
                         </Image>
                     </View>
