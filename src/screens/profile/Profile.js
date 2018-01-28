@@ -84,7 +84,7 @@ class Profile extends React.Component {
                                             flex: .4,
                                             height: 40,
                                             textAlign: 'center',
-                                            top: 22,
+                                            top: 21,
                                             justifyContent: 'flex-start',
                                             fontFamily: 'Avenir-Book'
                                         }}>

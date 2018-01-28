@@ -111,6 +111,7 @@ class FoodDisplay extends React.Component {
                                         height: 25,
                                         left: 15
                                     }} source={require('../../assets/menu.png')} />
+
                                 </Button>
 
                             </Left>
