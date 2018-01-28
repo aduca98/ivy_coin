@@ -15,75 +15,29 @@ import forceAuth from '../../utils/ForceAuth';
 import DinnerSlider from '../../components/dinner-selector/DinnerSlider';
 import ShoppingCart from '../../components/ShoppingCart';
 import dinningHalls from '../../assets/dinning-halls/dinning-halls';
+import StellarController from '../../utils/Stellar';
 
 class ManageCrypto extends React.Component {
 
     state = {
-        notification: {},
-        loading: true,
-        selectedIndex: 0
     };
 
     constructor() {
         super();
-        this.selectCurrency = this.selectCurrency.bind(this);
-        this.activeIndex = this.activeIndex.bind(this);
-        this.onRegionChange = this.onRegionChange.bind(this);
-        this.navDeliver = this.navDeliver.bind(this);
-        this.navOrder = this.navOrder.bind(this);
-    }
-    selectCurrency(val) {
-        this.setState({
-            selectedCurrency: val.currency
-        })
-    }
-    activeIndex(index) {
-        var dh = dinningHalls.dinningHalls[index];
-        var lat = dh.location.lat;
-        var long = dh.location.long;
-        this.map.animateToRegion(
-            {
-              latitude: lat,
-              longitude: long,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
-            },
-            300
-        );
-        this.setState({
-            selectedIndex: index
-        })
-    }
 
-    async navOrder() {
-        return this.props.navigation.navigate("Food_Display", { dinningHall: this.state.selectedIndex });
     }
-    async navDeliver() {
-        return this.props.navigation.navigate("Deliveries_Display", { dinningHall: this.state.selectedIndex });
-    }
+   
     async componentWillMount() {
-        return this.setState({
-            region: new MapView.AnimatedRegion({
-                latitude: 41.826544,
-                longitude: -71.402698,
-                latitudeDelta: 0.01,
-                longitudeDelta: 0.01,
-            })
-        });
+        const {} = StellarController.createUserKeys();
     }
     onRegionChange(region) {
-        return this.setState({
-            region: region
-        })
+        
     }
 
     render() {
         const { region } = this.state;
         const {navigation} = this.props;
-        //
-        // if(this.state.loading) {
-        //     return <Loading />
-        // }
+        
         return (
           <View style={{
             flex: 1,
@@ -134,7 +88,7 @@ class ManageCrypto extends React.Component {
                             justifyContent: 'flex-start',
                             fontFamily: 'Avenir-Book'
                         }}>
-                        Manage Crypto
+                        BrownBytes
                     </Text>
                     <View style={{
                         right: 0,

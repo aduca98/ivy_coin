@@ -7,13 +7,12 @@ StellarSdk.Network.useTestNetwork();
 
 export default class StellarController {
 
-    static makeAccount() {
+    static async makeAccount() {
         var {s, p} = StellarController.createUserKeys();
         await StellarController.storeUserKeys(s, p);
         var body = await StellarController.makeTestAccount(p);
         return { publicKey: p }; // Return user's public key...
     }
-
     static createUserKeys() {
         var pair = StellarSdk.Keypair.random();
         var secretKey = pair.secret();

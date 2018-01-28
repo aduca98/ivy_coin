@@ -3,7 +3,7 @@ import * as React from "react";
 import {View, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
 import {Button, H1, Icon, Text} from "native-base";
 import autobind from 'autobind-decorator';
-import {FontAwesome, MaterialIcons} from '@expo/vector-icons'
+import {FontAwesome, MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons'
 
 import {Avatar, Images, NavigationHelpers, WindowDimensions, Styles} from "../";
 
@@ -14,6 +14,7 @@ var images = [
     <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="home" />,
     <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="shopping-basket" />,
     <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="user" />,
+    <MaterialCommunityIcons style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="coin" />,
 ]
 export default class Drawer extends React.Component {
 
@@ -46,11 +47,8 @@ export default class Drawer extends React.Component {
             .map((route, i) => {
                 var routeName = route.key; 
                 switch(routeName) {
-                    case "Buy_Crypto":
-                        routeName = "Buy Crypto";
-                        break;
-                    case "Send_Crypto":
-                        routeName = "Send Crypto";
+                    case "Manage_Crypto":
+                        routeName = "BrownBytes";
                         break;
                     default:
                         break;
