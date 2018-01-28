@@ -22,6 +22,7 @@ export default class DinnerSlider extends Component {
         const {buttons, style, arrowColor, textStyle, dinninghalls} = this.props;
         return(
             <Swiper 
+                index={this.props.index || 0}
                 onIndexChanged={(index) => this.props.activeIndex(index)}
                 showsButtons={true}
                 showsPagination={false}
