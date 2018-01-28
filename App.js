@@ -42,9 +42,9 @@ export default class App extends React.Component {
     constructor() {
         super();
     }
-    
+
     componentDidMount() {
-        
+
     }
     componentWillMount() {
         this.setState({ ready: false });
@@ -101,7 +101,7 @@ const DrawerNavigation = DrawerNavigator({
 const FullNavigator = StackNavigator({
     Auth: { screen: AuthNavigation },
     Main: { screen: DrawerNavigation },
-    
+
     // Stack views
 }, {
     headerMode: "none",
@@ -113,7 +113,7 @@ const FullNavigator = StackNavigator({
 
 const AppNavigator = StackNavigator({
     FullNavigator: { screen: FullNavigator },
-    
+
     // Modals
     Food_Display: { screen: FoodDisplay },
     Deliveries_Display: { screen: DeliveriesDisplay },
@@ -121,9 +121,7 @@ const AppNavigator = StackNavigator({
 }, {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "FullNavigator"
+    initialRouteName: "Food_Display"
 });
 
 export {AppNavigator}
-
-

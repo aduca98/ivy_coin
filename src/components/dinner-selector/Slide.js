@@ -10,6 +10,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import {H1, Button, Left, Header} from "native-base";
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 export default class Slide extends Component {
 
@@ -25,79 +26,6 @@ export default class Slide extends Component {
                     <Image style={{borderRadius: 75, height: 150, width: 150}} source={b.photo} />
                     <Text style={[styles.text, textStyle]}> {b.name}</Text>
                     {/*<Text style={[styles.text, textStyle]}> {b.description}</Text>*/}
-                    
-                    {buttons && <View style={{
-                        flexDirection: 'row',
-                            alignItems: 'center',
-                            paddingVertical: 10,
-                            height:50,
-                            top:20,
-                        }}>
-                        <View style={{
-                                alignItems: 'center',
-                                flex: .5,
-                            }}>
-                            <TouchableOpacity 
-                                onPress={() => this.props.navigation.navigate("Send_Crypto")}
-                                style={{ 
-                                    width: 155,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    flexDirection: 'row',
-                                    borderRadius: 35,
-                                    alignItems: 'center', 
-                                    justifyContent: 'center',
-                                }}>
-                                <Image style={{
-                                    height: 40,
-                                    left: -10,
-                                    width: 40}} 
-                                    source={require('../../assets/icons/send.png')}/>
-                                <Text
-                                    style={{
-                                    backgroundColor: 'transparent',
-                                    fontSize: 17,
-                                    color: '#fec315',
-                                    fontWeight: 'bold',
-                                    fontFamily: 'Avenir-Book'
-                                    }}>
-                                    Order
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={{
-                                alignItems: 'center',
-                                flex: .5
-                            }}>
-                            <TouchableOpacity 
-                                onPress={() => this.props.navigation.navigate("Buy_Crypto")}
-                                style={{ 
-                                    width: 155,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    borderRadius: 35,
-                                    alignItems: 'center', 
-                                    justifyContent: 'center',
-                                    flexDirection: 'row',
-                                }}>
-                                <Image style={{
-                                    left: -10,
-                                    height: 40,
-                                    width: 40}} 
-                                    source={require('../../assets/icons/credit-card.png')}/>
-                                <Text
-                                    style={{
-                                        backgroundColor: 'transparent',
-                                        fontSize: 17,
-                                        fontWeight: 'bold',
-                                        color: '#fec315',
-                                        fontFamily: 'Avenir-Book'
-                                    }}>
-                                    Deliver
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>}
                     
                 </View>)
     

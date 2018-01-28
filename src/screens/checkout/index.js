@@ -71,8 +71,6 @@ class Checkout extends React.Component {
                   barStyle="light-content"
               />*/
             <View>
-              // Header
-
 
               
 
