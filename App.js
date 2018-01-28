@@ -90,12 +90,13 @@ const AuthNavigation = StackNavigator({
 const DrawerNavigation = DrawerNavigator({
     Home: { screen: Home },
     Checkout: { screen: Checkout },
-    Profile: { screen: Profile },
     Manage_Crypto: { screen: ManageCrypto },
+    Profile: { screen: Profile },
+
 }, {
     drawerWidth: 300,
     contentComponent: Drawer,
-    initialRouteName: "Home",
+    initialRouteName: "Manage_Crypto",
     headerMode: "none",
 });
 

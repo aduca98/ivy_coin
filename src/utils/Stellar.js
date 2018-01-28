@@ -2,6 +2,7 @@ import {SecureStore} from 'expo';
 
 var StellarSdk = require('stellar-sdk');
 var request = require('request');
+var crypto = require('crypto');
 var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 StellarSdk.Network.useTestNetwork();
 

@@ -10,12 +10,12 @@ import variables from "../../assets/native-base-theme/variables/commonColor";
 import Loading from '../../components/Loading';
 import {connect} from 'react-redux';
 import {MaterialCommunityIcons, Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
+import QRCode from 'react-native-qrcode';
 
 import forceAuth from '../../utils/ForceAuth';
 import DinnerSlider from '../../components/dinner-selector/DinnerSlider';
 import ShoppingCart from '../../components/ShoppingCart';
 import dinningHalls from '../../assets/dinning-halls/dinning-halls';
-// import StellarController from '../../utils/Stellar';
 
 class ManageCrypto extends React.Component {
 
@@ -24,14 +24,14 @@ class ManageCrypto extends React.Component {
 
     constructor() {
         super();
-
+        
     }
    
     async componentWillMount() {
-        // const {} = StellarController.createUserKeys();
-    }
-    onRegionChange(region) {
-        
+        this.setState({
+            privateKey: "SBK7J4EIRDUIKM4SIKT2H6NZCRLM3RAWQS2QXQCIKPI5QAWU7SDAROSB",
+            publicKey: "GB55HI7EAYP26HHO6WLNGBQES77DOWXN5O7CJNB3WEQ3M3GDDW2KREUZ"
+        });
     }
 
     render() {
@@ -101,6 +101,99 @@ class ManageCrypto extends React.Component {
 
                 </View>
             </View>
+
+            <ScrollView 
+                contentContainerStyle={{
+                    alignItems: 'center',
+                }}
+                style={{
+                    top: 30,
+                    width: WindowDimensions.width
+                }}> 
+                <View style={{
+                    alignItems: 'center',
+                    padding: 10,
+                }}> 
+                    <Image style={{
+                        width: 160,
+                        height:155,
+                    }} source={require('../../assets/brownbytes.png')} />
+                    <Text style={{
+                        fontSize: 25,
+                    }}> 45.50</Text>
+                    <Text> BrownBytes </Text>
+                </View>
+
+                <View style={{
+                    flexDirection: 'row',
+                    width: WindowDimensions.width,
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <QRCode
+                        value={this.state.privateKey}
+                        size={75}
+                        style={{
+                            flex: .2,
+                        }}
+                        bgColor='#54301a'
+                        fgColor='white'/>
+                    <Text style={{
+                        flex: .75,
+                        marginLeft: 30
+                    }}>Receive Money: {this.state.publicKey}</Text>
+                </View>
+
+                <View style={{
+                    flexDirection: 'row',
+                    width: WindowDimensions.width,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: 30
+                }}>
+                    <Text style={{
+                        flex: 1,
+                        marginLeft: 30
+                    }}>Private Key: {this.state.privateKey}</Text>
+                </View>
+
+                <Button full onPress={() => alert("save")} style={{ 
+                    marginTop: 30,
+                    height: 50,
+                    borderRadius: 30,
+                    width: 250,
+                    alignSelf: 'center',
+                    backgroundColor: "#3E9FFF"
+                }}>
+                    <Text style={{color: 'white', fontSize: 25, fontFamily: "Avenir"}}>
+                        Send Coins
+                    </Text>
+                </Button>
+                <Button full onPress={() => alert("save")} style={{ 
+                    marginTop: 30,
+                    height: 50,
+                    borderRadius: 30,
+                    width: 250,
+                    alignSelf: 'center',
+                    backgroundColor: "#3E9FFF"
+                }}>
+                    <Text style={{color: 'white', fontSize: 25, fontFamily: "Avenir"}}>
+                        Sell Coins
+                    </Text>
+                </Button>
+                <Button full onPress={() => alert("save")} style={{ 
+                    marginTop: 30,
+                    height: 50,
+                    borderRadius: 30,
+                    width: 250,
+                    alignSelf: 'center',
+                    backgroundColor: "#3E9FFF"
+                }}>
+                    <Text style={{color: 'white', fontSize: 25, fontFamily: "Avenir"}}>
+                        Buy More
+                    </Text>
+                </Button>
+            </ScrollView>
 
           </View>);
     }

@@ -45,6 +45,7 @@
     "react-native-keyboard-aware-scroll-view": "^0.4.2",
     "react-native-keyboard-aware-scrollview": "^2.0.0",
     "react-native-masked-text": "^1.6.5",
+    "react-native-qrcode": "^0.2.6",
     "react-native-radio-button": "^2.0.1",
     "react-native-simple-radio-button": "^2.7.1",
     "react-native-snap-carousel": "^3.5.0",
