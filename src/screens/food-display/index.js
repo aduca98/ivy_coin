@@ -9,12 +9,7 @@ import {BaseContainer, Circle, Styles, Images, WindowDimensions} from "../../com
 import variables from "../../assets/native-base-theme/variables/commonColor";
 import Loading from '../../components/Loading';
 import {connect} from 'react-redux';
-<<<<<<< HEAD
-import {Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
-
-=======
 import {FontAwesome, EvilIcons} from '@expo/vector-icons';
->>>>>>> f1e837b3b051c0a7bdd46bfa495e3775a93d61f6
 class FoodDisplay extends React.Component {
 
     state = {
@@ -109,21 +104,6 @@ class FoodDisplay extends React.Component {
                                     top: 35,
                                     justifyContent: 'flex-start'
                                 }}>
-<<<<<<< HEAD
-                                <Button onPress={() => navigation.goBack(null)} transparent>
-                                    <Ionicons style={{
-                                        color: 'white',
-                                        fontSize: 35,
-                                        left: 15,
-                                        top: 0
-                                    }} name='ios-arrow-round-back-outline' />
-                                    {/*<Text style={{
-                                        color: 'white',
-                                        fontSize: 20,
-                                        left: 25,
-                                        top: -3,
-                                    }}>Back</Text>*/}
-=======
 
                                 <Button onPress={() => navigation.navigate("DrawerOpen")} transparent>
                                     <Image style={{
@@ -131,14 +111,11 @@ class FoodDisplay extends React.Component {
                                         height: 25,
                                         left: 15
                                     }} source={require('../../assets/menu.png')} />
->>>>>>> f1e837b3b051c0a7bdd46bfa495e3775a93d61f6
+
                                 </Button>
 
                             </Left>
-<<<<<<< HEAD
-=======
 
->>>>>>> f1e837b3b051c0a7bdd46bfa495e3775a93d61f6
                             <Text
                                 style={{
                                     backgroundColor: 'transparent',
