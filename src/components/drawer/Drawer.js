@@ -3,7 +3,7 @@ import * as React from "react";
 import {View, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
 import {Button, H1, Icon, Text} from "native-base";
 import autobind from 'autobind-decorator';
-import {MaterialIcons} from '@expo/vector-icons'
+import {FontAwesome, MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons'
 
 import {Avatar, Images, NavigationHelpers, WindowDimensions, Styles} from "../";
 
@@ -11,11 +11,10 @@ import variables from "../../assets/native-base-theme/variables/commonColor";
 import Storage from '../../api/Storage';
 
 var images = [
-    <Image style={{width: 40, top: 5, marginRight: 15, height: 40}} source={require("../../assets/icons/send.png")} />,
-    <Image style={{width: 40, top: 5, marginRight: 15, height: 40}} source={require("../../assets/icons/transactions.png")} />,
-    <Image style={{width: 40, top: 5, marginRight: 15, height: 40}} source={require("../../assets/icons/credit-card.png")} />,
-    <Image style={{width: 40, top: 5, marginRight: 15, height: 40}} source={require("../../assets/icons/send.png")} />,
-    <Image style={{width: 40, top: 5, marginRight: 15, height: 40}} source={require("../../assets/icons/profile.png")} />
+    <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="home" />,
+    <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="shopping-basket" />,
+    <FontAwesome style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="user" />,
+    <MaterialCommunityIcons style={{color: 'white', fontSize: 35, top: 5, width: 40, marginRight: 15}} name="coin" />,
 ]
 export default class Drawer extends React.Component {
 
@@ -48,11 +47,8 @@ export default class Drawer extends React.Component {
             .map((route, i) => {
                 var routeName = route.key; 
                 switch(routeName) {
-                    case "Buy_Crypto":
-                        routeName = "Buy Crypto";
-                        break;
-                    case "Send_Crypto":
-                        routeName = "Send Crypto";
+                    case "Manage_Crypto":
+                        routeName = "BrownBytes";
                         break;
                     default:
                         break;
@@ -67,8 +63,16 @@ export default class Drawer extends React.Component {
             });
         //
         return (
-            <View style={[Styles.flexGrow, {width: 300, backgroundColor: 'red'}]}>
+            <View style={[Styles.flexGrow, {width: 300, backgroundColor: '#001944'}]}>
                 <View style={[StyleSheet.absoluteFill, style.background]} />
+                <Image style={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: 50,
+                    top: 100,
+                    alignSelf: 'center'
+                }} source={{uri: "https://api.adorable.io/avatars/285/andrew@gmail.com"}} />
+
                 <SafeAreaView style={StyleSheet.absoluteFill}>
                     <View style={[style.container]}>
                         <View style={style.header} >
@@ -83,7 +87,7 @@ export default class Drawer extends React.Component {
                             </Button>
                         </View>
                         <View style={[style.drawerItemsContainer, {
-                            top: 150, 
+                            top: 40, 
                             height: WindowDimensions.height - 200, 
                             paddingTop: 0,
                             }]}>
@@ -164,8 +168,8 @@ const style = StyleSheet.create({
         alignItems: "flex-start",
     },
     drawerItems: {
-        flex: .5,
-        marginTop: 50,
+        flex: .4,
+        marginTop: 20,
         // justifyContent: "space-between"
     },
     drawerIcon: {

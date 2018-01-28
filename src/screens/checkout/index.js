@@ -10,74 +10,45 @@ import variables from "../../assets/native-base-theme/variables/commonColor";
 import Loading from '../../components/Loading';
 import {connect} from 'react-redux';
 import {Ionicons, FontAwesome, EvilIcons} from '@expo/vector-icons';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
+
+import {emptyCart} from '../../modules/shopping-cart';
 
 class Checkout extends React.Component {
 
     state = {
         notes: "",
-        items: []
     };
 
     constructor() {
         super();
-        this.removeFromCart = this.removeFromCart.bind(this);
+        this.order = this.order.bind(this);
+        // this.removeFromCart = this.removeFromCart.bind(this);
     }
 
+    order() {
+        this.props.emptyCart();
+        alert("Your order has been submitted!");
+        this.props.navigation.navigate("Home");
+    }
+    
     async componentWillMount() {
-      this.setState({
-          items: [{
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Big Burger Deluxe Number 7",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }, {
-              name: "Cheeseburger",
-              description: "burger",
-              image: "http://healthsupple.org/images/burger.jpg"
-          }]
-      });
+      
     }
 
-    async removeFromCart(index) {
-      this.state.items.splice(index, 1);
-      this.setState({
-        items: this.state.items
-      });
-    }
+    // async removeFromCart(index) {
+    //   this.state.items.splice(index, 1);
+    //   this.setState({
+    //     items: this.state.items
+    //   });
+    // }
 
     async fetchBalance() {
 
     }
 
     render() {
-        const {navigation} = this.props;
+        const {navigation, items} = this.props;
 
         const image_width = 95;
         console.log(WindowDimensions.width-image_width);
@@ -108,8 +79,8 @@ class Checkout extends React.Component {
                   alignSelf: 'center',
             }}>
               <View style={{
-                backgroundColor: "#3B5998",
-                height: 45,
+                backgroundColor: "#56A0ED",
+                height: 90,
                 padding:0,
                 left:0,
                 width: WindowDimensions.width
@@ -123,6 +94,7 @@ class Checkout extends React.Component {
                   <Left style={{
                           left: 15,
                           flex: .3,
+                          top: 35,
                           justifyContent: 'flex-start'
                       }}>
                       <Button onPress={() => navigation.goBack(null)} transparent>
@@ -142,9 +114,8 @@ class Checkout extends React.Component {
                       fontSize: 25,
                       color: '#fff',
                       flex: .4,
-
+                      top: 35,
                       textAlign: 'center',
-                      top: 0,
                       justifyContent: 'flex-start',
                       fontFamily: 'Avenir-Book'
                   }}>
@@ -170,22 +141,23 @@ class Checkout extends React.Component {
                 textAlign: "center",
                 textAlignVertical: "center"
               }}>
-                Items: {this.state.items.length}
+                Items: {this.props.items && this.props.items.length}
               </Text>
             </View>
 
             {/* Scroll! */}
-            <ScrollView style={{
-              marginBottom: 50
-            }}>
-              {this.state.items && this.state.items.map((item, i) => {
-                return(
+            <KeyboardAwareScrollView style={{
+              marginBottom: 50,
+              height: WindowDimensions.height
+                }}>
+              {this.props.items && this.props.items.map((item, i) => {
+                return(item.name &&
                   <View
                   animationIn={'fadeIn'}
                   animationOut={'fadeOut'}
                   style= {{
                     backgroundColor: '#fff',
-                    width: .95 * WindowDimensions.width,
+                    width: .9 * WindowDimensions.width,
                     alignSelf: 'center',
                     marginTop: 20,
                     padding: 13,
@@ -198,10 +170,11 @@ class Checkout extends React.Component {
                         width: 60,
                         height: 60,
                         marginRight: 10,
+                        marginLeft: 10,
                         justifyContent:'center',
                         alignItems:'center',
                       }}
-                      source={{uri: item.image}}
+                      source={item.photo}
                       />
 
                     <View style={{
@@ -225,13 +198,13 @@ class Checkout extends React.Component {
                     </View>
 
                     <TouchableOpacity
-                        onPress={() => this.removeFromCart(i)}
+                        onPress={() => console.log("Would remove...")}
                         style={{
                             width: 50,
                             height: 50,
                             alignSelf: 'center',
 
-                            backgroundColor: '#3B5998',
+                            backgroundColor: '#ccc',
                             padding: 0,
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -251,45 +224,64 @@ class Checkout extends React.Component {
               <View style={{
                 height: 236,
               }}>
-                <TextInput
-                  onChangeText={(notes) => this.setState({notes})}
-                  value={this.state.notes}
-                  multiline={true}
-                  placeholder="Notes for your order"
-                  underlineColorAndroid="#FFFFFF"
-                  style={{
-                    backgroundColor: "#fff",
-                    textAlignVertical: "top",
-                    height: 200,
-                    margin: 18,
-                    borderColor: "#B1B1B1",
-                    borderWidth: .5,
-                    padding: 4
-                }}/>
+                <TextInput 
+                    multiline={true}
+                    style={{
+                        color: '#000',
+                        alignSelf: 'center',
+                        marginVertical: 15,
+                        textAlign: 'left',
+                        fontSize: 18,
+                        paddingLeft: 40,
+                        paddingTop: 20,
+                        borderBottomColor: 'transparent',
+                        height: 150,
+                        width: .9 * WindowDimensions.width,
+                        justifyContent: 'center',
+                        backgroundColor: '#fff',
+                        borderRadius: 10,
+                        shadowColor: '#ccc',
+                        shadowOffset: {
+                            width: 0,
+                            height: 3
+                        },
+                        shadowRadius: 3,
+                        shadowOpacity: 0.7
+                    }}
+                    placeholderTextColor={"#888"}
+                    tintColor={"#000"}
+                    ref={'firstName'} 
+                    placeholder="Order notes"
+                    keyboardType={"default"}
+                    onChangeText={(notes) => this.setState({notes})}
+                    value={this.state.notes}
+                />
+               
               </View>
               <View style={{
                 marginBottom: 12
               }}>
                 <TouchableOpacity
-                  onPress={() => alert("Pressed.")}
+                  onPress={this.order}
                   style={{
-                    height: 40,
+                    height: 50,
                     alignSelf: 'center',
-
-                    backgroundColor: '#3B5998',
+                    width: 300,
+                    backgroundColor: '#ECBE00',
                     alignItems: 'center',
                     justifyContent: 'center',
                     borderRadius: 60
                 }}>
                   <Text style={{
                     padding: 10,
+                    backgroundColor: 'transparent',
                     color: '#fff',
                     fontSize: 20,
                     fontFamily: "Avenir-Book"
                   }}>Order</Text>
                 </TouchableOpacity>
               </View>
-            </ScrollView>
+            </KeyboardAwareScrollView>
           </View>
         /*</BaseContainer>*/);
     }
@@ -305,15 +297,15 @@ const style = StyleSheet.create({
 
 function mapStateToProps(state) {
     return {
-
+        items: state.shoppingCart.items
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        // updateBalances(balances) {
-        //     dispatch(updateBalances(balances))
-        // }
+        emptyCart() {
+            dispatch(emptyCart());
+        }
     }
 }
 

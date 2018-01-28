@@ -227,7 +227,7 @@ class DeliveriesDisplay extends React.Component {
                                         onPress={() => this.props.navigation.navigate("Details")}
                                         style={{
                                             width: 70,
-                                            backgroundColor: 'brown',
+                                            backgroundColor: 'transparent',
                                             padding: 15,
                                             alignItems: 'center',
                                             borderRadius: 50,
@@ -235,7 +235,8 @@ class DeliveriesDisplay extends React.Component {
                                         }}>
 
                                         <Text style={{
-                                            color: '#fff', 
+                                            color: '#ECBE00', 
+                                            fontWeight: 'bold',
                                             fontFamily: 'Avenir-Book',
                                             fontSize: 20,
                                         }}>Details</Text>
@@ -246,14 +247,15 @@ class DeliveriesDisplay extends React.Component {
                                         style={{
                                             width: 100,
                                             flex: 0.4,
-                                            backgroundColor: 'brown',
+                                            backgroundColor: '#ECBE00',
                                             padding: 15,
                                             alignItems: 'center',
                                             borderRadius: 50
                                         }}>
 
                                         <Text style={{
-                                            color: '#fff', 
+                                            color: '#fff',
+                                            fontWeight: 'bold', 
                                             fontFamily: 'Avenir-Book',
                                             fontSize: 20,
                                         }}>Accept</Text>

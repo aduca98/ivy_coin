@@ -22,6 +22,7 @@ import FoodDisplay from './src/screens/food-display';
 import DeliveriesDisplay from './src/screens/deliveries-display';
 import Checkout from './src/screens/checkout';
 import Details from './src/screens/details';
+import ManageCrypto from './src/screens/manage-crypto';
 
 import getTheme from "./src/assets/native-base-theme/components";
 import variables from "./src/assets/native-base-theme/variables/commonColor";
@@ -90,6 +91,7 @@ const DrawerNavigation = DrawerNavigator({
     Home: { screen: Home },
     Checkout: { screen: Checkout },
     Profile: { screen: Profile },
+    Manage_Crypto: { screen: ManageCrypto },
 }, {
     drawerWidth: 300,
     contentComponent: Drawer,
