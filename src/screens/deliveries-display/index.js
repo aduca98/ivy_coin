@@ -28,7 +28,12 @@ class DeliveriesDisplay extends React.Component {
                 {
                     name: "Bob",
                     image: "http://www.math.uni-frankfurt.de/~person/_4170854.jpg",
-                    phone: "8589997892"
+                    phone: "858-999-7892"
+                },
+                {
+                    name: "Bob",
+                    image: "http://www.math.uni-frankfurt.de/~person/_4170854.jpg",
+                    phone: "858-999-7892"
                 },
                 {
                     name: "Bob",
@@ -45,6 +50,11 @@ class DeliveriesDisplay extends React.Component {
                     image: "http://www.math.uni-frankfurt.de/~person/_4170854.jpg",
                     phone: "8589997892"
                 },
+                {
+                    name: "Bob",
+                    image: "http://www.math.uni-frankfurt.de/~person/_4170854.jpg",
+                    phone: "8589997892"
+                }
             ]
         });
     }
@@ -199,7 +209,7 @@ class DeliveriesDisplay extends React.Component {
                                             fontFamily: "Avenir"
                                         }}> {f.name} </Text>
                                         <Text style={{
-                                        }}> {f.phone} </Text>
+                                        }}> {"Phone Number: " + f.phone} </Text>
                                     </View>
                                     <TouchableOpacity 
                                         onPress={() => alert("Pressed.")}

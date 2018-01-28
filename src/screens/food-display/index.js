@@ -10,7 +10,6 @@ import variables from "../../assets/native-base-theme/variables/commonColor";
 import Loading from '../../components/Loading';
 import {connect} from 'react-redux';
 import {FontAwesome, EvilIcons} from '@expo/vector-icons';
-
 class FoodDisplay extends React.Component {
 
     state = {
@@ -22,7 +21,7 @@ class FoodDisplay extends React.Component {
     constructor() {
         super();
     }
-    
+
     async componentWillMount() {
         // Will grab param passed to this route but for now...
         this.setState({
@@ -30,7 +29,7 @@ class FoodDisplay extends React.Component {
             picture: "http://schwartzsilver.com/wp-content/uploads/2014/01/Andrews-1_bright-640x432.jpg",
             food: [{
                 name: "Cheeseburger",
-                description: "burger",
+                description: "What Andrew always uses for displaying random shit, I don't personally get it but ah well",
                 image: "http://healthsupple.org/images/burger.jpg"
             }, {
                 name: "Cheeseburger",
@@ -59,31 +58,30 @@ class FoodDisplay extends React.Component {
     async fetchBalance() {
 
     }
-    
+
     render() {
-      
+
         const {navigation} = this.props;
-        
+
         // if(this.state.loading) {
         //     return <Loading />
         // }
         return (
-            <BaseContainer 
+            <BaseContainer
                 backgroundColor={'#efefef'}
                 noHeader={true} {...{ navigation }}>
                 <StatusBar
                     barStyle="light-content"
                 />
-                <LinearGradient 
+                <LinearGradient
                     start={[0, 0]}
                     end={[1, 1]}
                     colors={['#fc5959', '#b51818']}
                     style={{
                         bottom: 0,
-                        height: 200,
+                        height: 320,
                         width: WindowDimensions.width,
                         borderRadius: 0,
-                        backgroundColor: 'gold',
                         justifyContent: 'center',
                         alignSelf: 'center',
                     }}>
@@ -94,7 +92,7 @@ class FoodDisplay extends React.Component {
                         top: -30,
                         padding:0,
                         left:0,
-                        width: WindowDimensions.width }}>
+                        width: WindowDimensions.width + 10}}>
 
                         <View style={{
                                 flex: .25,
@@ -106,6 +104,7 @@ class FoodDisplay extends React.Component {
                                     top: 35,
                                     justifyContent: 'flex-start'
                                 }}>
+
                                 <Button onPress={() => navigation.navigate("DrawerOpen")} transparent>
                                     <Image style={{
                                         width: 35,
@@ -113,8 +112,9 @@ class FoodDisplay extends React.Component {
                                         left: 15
                                     }} source={require('../../assets/menu.png')} />
                                 </Button>
+
                             </Left>
-                            
+
                             <Text
                                 style={{
                                     backgroundColor: 'transparent',
@@ -135,11 +135,26 @@ class FoodDisplay extends React.Component {
                         </View>
 
                     </View>
-                    
+                    <View style = {{
+                        height: 160,
+                        width: WindowDimensions.width,
+                        marginTop:-15,
+                        marginBottom: 10,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                        <Image style = {{
+                                justifyContent: 'center',
+                                borderRadius:80,
+                                height: 160,
+                                width: 160,
+                            }} source = {{uri:this.state.picture}}>
+                        </Image>
+                    </View>
                     <View style={{
                         flex: .25
                     }}>
-                        <TextInput 
+                        <TextInput
                                 style={[style.input, {
                                     alignSelf: 'center',
                                     color: '#000',
@@ -148,17 +163,17 @@ class FoodDisplay extends React.Component {
                                     paddingLeft: 40,
                                     paddingTop: 5,
                                     borderBottomColor: 'transparent',
-                                    height: 60,
-                                    width: 300,
+                                    height: 40,
+                                    width: 330,
                                     justifyContent: 'center',
                                     backgroundColor: '#fff',
                                     borderRadius: 30,
                                 }]}
-                                returnKeyLabel='Done' 
+                                returnKeyLabel='Done'
                                 returnKeyType='done'
                                 placeholderTextColor={"#888"}
                                 tintColor={"#000"}
-                                ref={'amount'} 
+                                ref={'amount'}
                                 placeholder="Search..."
                                 keyboardType={"default"}
                                 value = {this.state.amount}
@@ -166,55 +181,67 @@ class FoodDisplay extends React.Component {
                             />
                     </View>
 
-                    
+
                 </LinearGradient>
 
-                <ScrollView> 
+                <ScrollView>
                     {this.state.food && this.state.food.map((f, i) => {
                         return( <View style= {{
                                     backgroundColor: '#fff',
-                                    width: WindowDimensions.width - 30,
+                                    width: WindowDimensions.width - 35,
                                     alignSelf: 'center',
                                     marginTop: 20,
-                                    padding: 20,
-                                    borderRadius: 15,
+                                    padding: 5,
+                                    borderRadius: 5,
                                     borderColor: "#ccc",
                                     justifyContent: 'center',
                                     flexDirection: 'row'
                                 }} key={i}>
                                     <Image style={{
-                                        width: 50,
-                                        height: 50,
-                                        justifyContent: 'center'
+                                        width: 60,
+                                        height: 60,
+                                        marginRight: 10,
+                                        justifyContent:'center',
+                                        alignItems:'center',
+
                                     }} source={{uri: f.image}} />
                                     <View style={{
-                                        width: 150,
+                                        width: 200,
                                         flexDirection: 'column'
                                     }}>
                                         <Text style={{
                                             color: "#000",
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             fontWeight: "bold",
-                                            fontFamily: "Avenir"
+                                            fontFamily: "Avenir",
+                                            justifyContent: 'center',
+                                            alignItems:'center'
                                         }}> {f.name} </Text>
-                                        {/*<Text style={{
-                                        }}> {f.description} </Text>*/}
+                                        {
+                                        <Text  ellipsizeMode='tail' numberOfLines={2}
+                                        style={{
+                                            fontSize: 10
+                                        }}> {f.description} </Text>}
                                     </View>
-                                    <TouchableOpacity 
+                                    <TouchableOpacity
                                         onPress={() => alert("Pressed.")}
                                         style={{
-                                            width: 100,
+                                            width: 50,
+                                            height: 50,
+                                            alignSelf: 'center',
+
                                             backgroundColor: 'brown',
-                                            padding: 15,
+                                            padding: 0,
                                             alignItems: 'center',
-                                            borderRadius: 15
+                                            justifyContent: 'center',
+                                            borderRadius: 60
                                         }}>
 
                                         <Text style={{
-                                            color: '#fff', 
+                                            color: '#fff',
                                             fontFamily: 'Avenir-Book',
                                             fontSize: 20,
-                                        }}>Add</Text>
+                                        }}>+</Text>
                                     </TouchableOpacity>
                                 </View>)
                     })}
@@ -223,19 +250,19 @@ class FoodDisplay extends React.Component {
     }
 }
 function cacheImages(images) {
-    return images.map(image => 
+    return images.map(image =>
     Expo.Asset.fromModule(image).downloadAsync());
 }
 
 const style = StyleSheet.create({
-    
+
 });
 
-function mapStateToProps(state) { 
+function mapStateToProps(state) {
     return {
-        
-    }; 
-} 
+
+    };
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -245,7 +272,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect( 
-    mapStateToProps, 
-    mapDispatchToProps 
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
 )(FoodDisplay);
